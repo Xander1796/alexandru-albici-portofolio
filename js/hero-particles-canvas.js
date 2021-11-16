@@ -10,7 +10,7 @@ export let numberOfParticles = 130;
 let maximumSizeOfParticle = 2;
 let minimumSizeOfParticle = 0.5;
 
-let colorsArray = ['_', "#43437E", "#5F5F9B", "#5C5CCF"];
+let colorsArray = ['_', "#9F9FFF", '#FDFFA4'];
 
 export class Particles {
     constructor(x, y, color, directionX, directionY, size) {
@@ -44,7 +44,7 @@ export function particleInit() {
     if(!localStorage.getItem('theme')) localStorage.setItem('theme', 'light-theme');
     if(localStorage.getItem('theme') === 'dark-theme') {
         for(let i = 0; i < numberOfParticles; i++) {
-            particlesArray.push(new Particles(Math.random() * window.innerWidth, Math.random() * window.innerHeight, '#fdffa4', Math.random() - 0.5, Math.random() - 0.5, Math.floor(Math.random() * (maximumSizeOfParticle - minimumSizeOfParticle + 1) + minimumSizeOfParticle)));
+            particlesArray.push(new Particles(Math.random() * window.innerWidth, Math.random() * window.innerHeight, '#9F9FFF', Math.random() - 0.5, Math.random() - 0.5, Math.floor(Math.random() * (maximumSizeOfParticle - minimumSizeOfParticle + 1) + minimumSizeOfParticle)));
         };
     };
 
@@ -72,7 +72,16 @@ function animateParticles() {
 
 animateParticles();
 
+let checkingResizingStatusTimeout;
+let hasStoppedResizing = false;
+
 window.addEventListener('resize', function() {
   particlesCanvas.width = window.innerWidth;
   particlesCanvas.height = window.innerHeight;
+  
+    particlesArray.length = 0;
+    particleInit();
+    
+    if(window.innerWidth < 1000) numberOfParticles = 50;
+
 });

@@ -50,9 +50,6 @@ export let waves = [wave1, wave2, wave3];
 
 changingWavesColors();
 
-
-ctx.strokeStyle = 'transparent';
-ctx.moveTo(0, canvas.height - 150);
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -61,58 +58,7 @@ function animate() {
         waves[i].drawWave();
     };
 
-    // ctx.beginPath();
-    // for(let i = 0;i < canvas.width; i++) {
-    //     ctx.lineTo(i, canvas.height - 150 + Math.sin(i * 0.004 - increment) * waveAmplitude * Math.sin(increment));
-    // };
-
-    // ctx.lineTo(canvas.width, canvas.height);
-    // ctx.lineTo(0, canvas.height);
-    // ctx.lineTo(0, canvas.height - 150);
-
-    // ctx.stroke();
-    // ctx.fillStyle = "#1B1B43";
-    // ctx.fill();
-
-    // ctx.closePath();
-
-    // ctx.moveTo(0, canvas.height - 120);
-    // ctx.beginPath();
-    // for(let i = 0;i < canvas.width; i++) {
-    //     ctx.lineTo(i, canvas.height - 120 + Math.sin(i * 0.004 + increment) * waveAmplitude * Math.sin(increment));
-    // };
-
-    // ctx.lineTo(canvas.width, canvas.height);
-    // ctx.lineTo(0, canvas.height);
-    // ctx.lineTo(0, canvas.height - 120);
-
-    // ctx.stroke();
-    // ctx.fillStyle = "#171739";
-    // ctx.fill();
-
-    // ctx.closePath();
-
-    // ctx.moveTo(0, canvas.height - 100);
-
-    // ctx.beginPath();
-    // for(let i = 0;i < canvas.width; i++) {
-    //     ctx.lineTo(i, canvas.height - 100 + Math.sin(i * 0.004 - increment) * waveAmplitude * Math.sin(increment));
-    // };
-
-    // ctx.lineTo(canvas.width, canvas.height);
-    // ctx.lineTo(0, canvas.height);
-    // ctx.lineTo(0, canvas.height - 100);
-
-    // ctx.stroke();
-    // ctx.fillStyle = "#11112A";
-    // ctx.fill();
-
-    // ctx.closePath();
-
-
     requestAnimationFrame(animate);
-    // increment += waveFrequency;
-    // ctx.strokeStyle = 'transparent';
 }
 
 animate();

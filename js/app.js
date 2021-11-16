@@ -57,8 +57,9 @@ copyButton.forEach(button => button.addEventListener('click', async function() {
 
     const messageCopied = document.createElement('div');
     messageCopied.classList.add('message-copied');
+    messageCopied.textContent = 'Copied!'
     messageCopied.insertAdjacentHTML('afterbegin', `
-    <img src="svgs/copy-icon.svg" alt=""> Copied to clipboard!
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13,20a5.006,5.006,0,0,0,5-5V6.243a3.972,3.972,0,0,0-1.172-2.829L14.586,1.172A3.972,3.972,0,0,0,11.757,0H7A5.006,5.006,0,0,0,2,5V15a5.006,5.006,0,0,0,5,5ZM4,15V5A3,3,0,0,1,7,2s4.919.014,5,.024V4a2,2,0,0,0,2,2h1.976c.01.081.024,9,.024,9a3,3,0,0,1-3,3H7A3,3,0,0,1,4,15ZM22,8V19a5.006,5.006,0,0,1-5,5H8a1,1,0,0,1,0-2h9a3,3,0,0,0,3-3V8a1,1,0,0,1,2,0Z"/></svg>
     `);
     body.prepend(messageCopied);
     
@@ -70,14 +71,16 @@ copyButton.forEach(button => button.addEventListener('click', async function() {
 let navObserverCallback = function(entries) {
   let [entry] = entries;
 console.log(entry)
-  if(nav.classList.contains('nav-fixed')) {
-      nav.classList.add('remove-nav-fixed');
+  if(entry.isIntersecting) {
+      if(nav.classList.contains('nav-fixed') ) nav.classList.add('remove-nav-fixed');
+
       setTimeout(function() {
         nav.classList.remove('remove-nav-fixed');
         nav.classList.remove('nav-fixed');
         heroSection.classList.remove('hero-section-margin');
       }, 300);
-    } else if(Math.sign(entry.boundingClientRect.top) === -1) {
+    } else {
+      entry.boundingClientRect.top
       nav.classList.add('nav-fixed');
       heroSection.classList.add('hero-section-margin');
   };
@@ -90,49 +93,25 @@ const navObserver = new IntersectionObserver(navObserverCallback, {
 
 navObserver.observe(heroSection);
 
+const navFixedOverlay = document.querySelector('.nav-fixed-overlay');
+
 nav.addEventListener('click', function(e) {
   if(e.target.classList.contains('ham-button')) {
-    navLinks.classList.add('ham-menu-open');
-    body.classList.add('stop-scrolling');
+    navLinks.classList.toggle('ham-menu-open');
+    body.classList.toggle('stop-scrolling');
+    navFixedOverlay.classList.toggle('nav-fixed-overlay-visible');
   };
 
   if(e.target.classList.contains('close-ham-button') || e.target.classList.contains('nav-link-target')) {
     navLinks.classList.remove('ham-menu-open');
     body.classList.remove('stop-scrolling');
     body.style.width = 'auto';
+    navFixedOverlay.classList.toggle('nav-fixed-overlay-visible');
   };
 });
 
 const navLink = [...document.querySelectorAll('.nav-link')];
 let allLink = [...navLink];
-
-navLink.forEach((link, i) => {
-  link.addEventListener('click', function(e) {
-    for(const path of navLinkUnderlinePath) {
-      path.classList.remove('nav-link-underline-path-active');
-      path.classList.add('nav-link-underline-path-inactive');
-    }
-    let targetedLink = navLink.indexOf(link);
-    navLinkUnderlinePath[targetedLink].classList.remove('nav-link-underline-path-inactive');
-    navLinkUnderlinePath[targetedLink].classList.add('nav-link-underline-path-active');
-  });
-});
-
-const navLinkObserverTarget = [...document.querySelectorAll('.nav-link-observer-target')];
-let sectObs = function(entries) {
-  let [entry] = entries;
-  for(const path of navLinkUnderlinePath) {
-    path.classList.remove('nav-link-underline-path-active');
-    path.classList.add('nav-link-underline-path-inactive');
-  }
-  let targetedLink = navLinkObserverTarget.indexOf(entry.target);
-  navLinkUnderlinePath[targetedLink].classList.remove('nav-link-underline-path-inactive');
-  navLinkUnderlinePath[targetedLink].classList.add('nav-link-underline-path-active');
-};
-
-let sectionObs = new IntersectionObserver(sectObs, {root: null, threshold: 1});
-
-navLinkObserverTarget.forEach((sect) => sectionObs.observe(sect));
 
 let featuredProjectNameObserver = new IntersectionObserver(function(entries) {
   let [entry] = entries;
@@ -156,16 +135,6 @@ let featuredProjectObserver = new IntersectionObserver(function(entries) {
 
 featuredProject.forEach(project => featuredProjectObserver.observe(project));
 
-const contactSvgObserver = new IntersectionObserver(function(entries) {
-  let [entry] = entries;
-
-  if(entry.isIntersecting) {
-    contactSvgPath.style.animation = 'contact-svg-path 1.3s ease forwards';
-    contactSvgMail.style.animation = 'contact-svg-mail 0.7s 0.9s ease forwards';
-  };
-}, {root: null, threshold: .75});
-
-contactSvgObserver.observe(mailSvg);
 
 document.addEventListener('keydown', function(e) {
   if(e.key === 'Escape' && navLinks.classList.contains('ham-menu-open')) navLinks.classList.remove('ham-menu-open');
