@@ -407,6 +407,7 @@ button {
   left: 50%;
   top: 0;
   transform: translateX(-50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
   animation: message-copied-anim .3s ease forwards;
 }
 
@@ -784,6 +785,7 @@ nav {
 
 .featured-project-img {
   width: 59%;
+  height: auto;
 }
 
 .featured-project-name {

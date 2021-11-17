@@ -78,10 +78,7 @@ let hasStoppedResizing = false;
 window.addEventListener('resize', function() {
   particlesCanvas.width = window.innerWidth;
   particlesCanvas.height = window.innerHeight;
-  
-    particlesArray.length = 0;
-    particleInit();
-    
+      
     if(window.innerWidth < 1000) numberOfParticles = 50;
 
 });
