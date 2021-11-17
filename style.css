@@ -1483,9 +1483,12 @@ z-index: 30;
     flex-direction: column-reverse;
   }
 
-  .featured-project-img,
   .featured-project-description {
     width: auto;
+  }
+
+  .featured-project-img {
+    width: 100%;
   }
 
   .featured-project-details {
