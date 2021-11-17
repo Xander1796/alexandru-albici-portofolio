@@ -18,10 +18,6 @@ const mailSvg = document.querySelector('#mail-svg')
 const contactSvgMail = document.querySelector('#contact-svg-mail');
 const contactSvgPath = document.querySelector('#contact-svg-path');
 
-// window.addEventListener('scroll', function() { 
-//     let distanceFromTop = body.getBoundingClientRect().top;
-//     wave.style.transform = `translateX(${distanceFromTop}px)`;
-// });
 
 heroSectionAnimElement.forEach((anim, i) => {
   anim.style.animation = `hero-section-anim .4s ${.2 * i}s cubic-bezier(.61,.09,.54,.97) forwards`;
@@ -93,20 +89,28 @@ const navObserver = new IntersectionObserver(navObserverCallback, {
 
 navObserver.observe(heroSection);
 
-const navFixedOverlay = document.querySelector('.nav-fixed-overlay');
 
 nav.addEventListener('click', function(e) {
   if(e.target.classList.contains('ham-button')) {
-    navLinks.classList.toggle('ham-menu-open');
+    navLinks.classList.toggle('ham-menu-overlay');
+
+    setTimeout(() => {
+      navLinks.querySelector('ul').classList.toggle('ham-menu-open');
+    }, 0);
+
     body.classList.toggle('stop-scrolling');
-    navFixedOverlay.classList.toggle('nav-fixed-overlay-visible');
   };
 
-  if(e.target.classList.contains('close-ham-button') || e.target.classList.contains('nav-link-target')) {
+  if(e.target.classList.contains('close-ham-button') || e.target.classList.contains('nav-link-target') || e.target.classList.contains('nav-links')) {
     navLinks.classList.remove('ham-menu-open');
+
+    setTimeout(() => {
+      navLinks.classList.toggle('ham-menu-overlay');
+    }, 200);
+
+    navLinks.querySelector('ul').classList.remove('ham-menu-open');
     body.classList.remove('stop-scrolling');
     body.style.width = 'auto';
-    navFixedOverlay.classList.toggle('nav-fixed-overlay-visible');
   };
 });
 
@@ -136,9 +140,7 @@ let featuredProjectObserver = new IntersectionObserver(function(entries) {
 featuredProject.forEach(project => featuredProjectObserver.observe(project));
 
 
-document.addEventListener('keydown', function(e) {
-  if(e.key === 'Escape' && navLinks.classList.contains('ham-menu-open')) navLinks.classList.remove('ham-menu-open');
-});
+
 
 
 

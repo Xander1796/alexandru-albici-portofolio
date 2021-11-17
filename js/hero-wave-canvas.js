@@ -2,9 +2,12 @@ import { changingWavesColors } from "./dark-mode.js";
 
 const canvas = document.querySelector('#hero-wave');
 const ctx = canvas.getContext('2d');
+const root = document.documentElement;
 
 canvas.width = innerWidth;
 canvas.height = innerHeight;
+
+console.log(getComputedStyle(root).getPropertyValue(`--hero-section-highest-wave-${1}`))
 
 class Wave {
     constructor(waveHeight, waveFrequency, waveAmplitude, waveColor, waveIncrement, waveDirection) {
@@ -39,9 +42,9 @@ class Wave {
     };
 };
 
-const wave1 = new Wave(150, 0.015, 50, '_', 0.001, -1);
-const wave2 = new Wave(120, 0.015, 50, '_', 0.001, 1);
-const wave3 = new Wave(100, 0.015, 50, '_', 0.001, -1);
+const wave1 = new Wave("_", 0.015, 50, '_', 0.001, -1);
+const wave2 = new Wave("_", 0.015, 50, '_', 0.001, 1);
+const wave3 = new Wave("_", 0.015, 50, '_', 0.001, -1);
 
 export let darkModeWaveColors = ["#1B1B43", "#171739", "#11112A"];
 export let lightModeWaveColors = ["#4E4EA4", "#454592", "#393976"];
@@ -54,8 +57,14 @@ function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for(let i = 0; i < waves.length; i ++) {
+        // SETTING THE DIRECTION OF WAVES
+
         i % 2 ? waves[i].waveDirection = -1 : waves[i].waveDirection = 1;
         waves[i].drawWave();
+
+        // SETTING WAVES HEIGHT THROUGH CSS VARIABLES
+        
+        waves[i].waveHeight = getComputedStyle(root).getPropertyValue(`--hero-section-wave-${i + 1}-height`);
     };
 
     requestAnimationFrame(animate);

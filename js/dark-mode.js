@@ -3,7 +3,6 @@ import { Particles, particlesArray, particleInit} from './hero-particles-canvas.
  
 const colorSwitcherContainer = document.querySelector('.color-switcher-button');
 const switcherIcon = document.querySelector('.switcher-icon');
-const colorSwitcherText = document.querySelector('.color-switcher-text');
 const body = document.querySelector('body');
 
 if(!localStorage.getItem('theme')) localStorage.setItem('light-theme');
@@ -19,8 +18,6 @@ if(!localStorage.getItem('theme')) localStorage.setItem('light-theme');
       body.classList.remove('light-theme');
       body.classList.add('dark-theme');
    };
-
-   body.classList.contains('dark-theme') ? colorSwitcherText.textContent = 'Dark' : colorSwitcherText.textContent = 'Light';
 };
 
 initCheckingTheme();
@@ -50,8 +47,6 @@ colorSwitcherContainer.addEventListener('click', function() {
    body.classList.toggle('light-theme');
 
    body.classList.contains('light-theme') ? localStorage.setItem('theme', 'light-theme') : localStorage.setItem('theme', 'dark-theme');
-
-   body.classList.contains('dark-theme') ? colorSwitcherText.textContent = 'Dark' : colorSwitcherText.textContent = 'Light';
 
    changingWavesColors();
    changingParticles();
