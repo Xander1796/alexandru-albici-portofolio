@@ -3,8 +3,11 @@ const particlesCanvas = document.querySelector('#particle-canvas');
 const particlesCtx = particlesCanvas.getContext('2d');
 const body = document.querySelector('body');
 
-particlesCanvas.width = window.innerWidth;
-particlesCanvas.height = window.innerHeight;
+window.addEventListener('load', function() {
+    particlesCanvas.width = window.innerWidth;
+    particlesCanvas.height = window.innerHeight; 
+    if(window.innerWidth < 1000) numberOfParticles = 40;   
+});
 
 export let numberOfParticles = 130;
 let maximumSizeOfParticle = 2;
