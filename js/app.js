@@ -140,6 +140,22 @@ let featuredProjectObserver = new IntersectionObserver(function(entries) {
 featuredProject.forEach(project => featuredProjectObserver.observe(project));
 
 
+// SETTING THE HEIGHT OF HERO SECTION ON LOAD
+
+
+const updateHeroSectionSize = function() {
+  heroSection.style.width = `${window.innerWidth}px`;
+  heroSection.style.height = `${window.innerHeight - window.getComputedStyle(nav).getPropertyValue('height').slice(0, -2)}px`;
+};
+
+window.addEventListener('load', function() {
+  updateHeroSectionSize();
+});
+
+window.addEventListener('resize', function() {
+  updateHeroSectionSize();
+});
+
 
 
 
