@@ -18,6 +18,24 @@ const mailSvg = document.querySelector('#mail-svg')
 const contactSvgMail = document.querySelector('#contact-svg-mail');
 const contactSvgPath = document.querySelector('#contact-svg-path');
 
+// SETTING A VARIABLE FOR THE VH UNIT
+
+let vh;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('DOMContentLoaded', function() {
+  vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  let scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.documentElement.style.setProperty('--scrollbar-width', `${scrollBarWidth}px`);
+});
+
+window.addEventListener('resize', function() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+
 
 heroSectionAnimElement.forEach((anim, i) => {
   anim.style.animation = `hero-section-anim .4s ${.2 * i}s cubic-bezier(.61,.09,.54,.97) forwards`;
@@ -139,22 +157,25 @@ let featuredProjectObserver = new IntersectionObserver(function(entries) {
 
 featuredProject.forEach(project => featuredProjectObserver.observe(project));
 
+// Observer for contact section plane svg
 
-// SETTING THE HEIGHT OF HERO SECTION ON LOAD
+const contactSectionPlaneDelimitator = document.querySelector('.contact-section-plane-delimitator');
+
+const contactSectionPlaneDelimitatorObserver = new IntersectionObserver(function(entries) {
+  let [entry] = entries;
+
+  if(entry.isIntersecting) {
+     contactSectionPlaneDelimitator.querySelector('.plane-delimitator').classList.add('plane-delimitator-anim');
+     contactSectionPlaneDelimitator.querySelector('.path-plane-line').classList.add('path-plane-line-anim');
+  };
+
+}, {root: null, threshold: 0.8});
+
+contactSectionPlaneDelimitatorObserver.observe(contactSectionPlaneDelimitator);
 
 
-const updateHeroSectionSize = function() {
-  heroSection.style.width = `${window.innerWidth}px`;
-  heroSection.style.height = `${window.innerHeight - window.getComputedStyle(nav).getPropertyValue('height').slice(0, -2)}px`;
-};
 
-window.addEventListener('load', function() {
-  updateHeroSectionSize();
-});
 
-window.addEventListener('resize', function() {
-  updateHeroSectionSize();
-});
 
 
 

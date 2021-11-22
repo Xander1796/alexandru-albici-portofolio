@@ -1,11 +1,9 @@
-import { waves, lightModeWaveColors, darkModeWaveColors } from './hero-wave-canvas.js';
-import { Particles, particlesArray, particleInit} from './hero-particles-canvas.js';
- 
+
 const colorSwitcherContainer = document.querySelector('.color-switcher-button');
 const switcherIcon = document.querySelector('.switcher-icon');
 const body = document.querySelector('body');
 
-if(!localStorage.getItem('theme')) localStorage.setItem('light-theme');
+if(!localStorage.getItem('theme')) localStorage.setItem('theme', 'light-theme');
 
  const initCheckingTheme = async function() {
    if(localStorage.getItem('theme') === 'light-theme') {
@@ -22,23 +20,6 @@ if(!localStorage.getItem('theme')) localStorage.setItem('light-theme');
 
 initCheckingTheme();
 
-export const changingWavesColors = function() {
-   let darkOrLightThemeWaves = body.classList.contains('light-theme') ? lightModeWaveColors : darkModeWaveColors;
-   
-   for(let i = 0; i < waves.length; i++) {
-      waves[i].waveColor = darkOrLightThemeWaves[i];
-   };
-};
-
-let changingParticles = function() {
-   if(body.classList.contains('dark-theme')) {
-      particlesArray.length = 0;
-      particleInit();
-   } else {
-      particlesArray.length = 0;
-      particlesArray.push(new Particles(window.innerWidth / 2, window.innerHeight - 150, '#FDFFA4', 0.5, 0.5, 120));
-   };
-};
 
 colorSwitcherContainer.addEventListener('click', function() {
    colorSwitcherContainer.classList.toggle('color-switcher-button-container-light-background');
@@ -47,9 +28,6 @@ colorSwitcherContainer.addEventListener('click', function() {
    body.classList.toggle('light-theme');
 
    body.classList.contains('light-theme') ? localStorage.setItem('theme', 'light-theme') : localStorage.setItem('theme', 'dark-theme');
-
-   changingWavesColors();
-   changingParticles();
 
    switcherIcon.classList.toggle('move-switcher-icon');
    switcherIcon.querySelector('.icon-body').classList.toggle('icon-body-light-color');

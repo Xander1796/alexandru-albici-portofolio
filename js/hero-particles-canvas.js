@@ -7,10 +7,9 @@ const body = document.querySelector('body');
 window.addEventListener('load', function() {
     particlesCanvas.width = window.innerWidth;
     particlesCanvas.height = window.innerHeight; 
-    if(window.innerWidth < 1000) numberOfParticles = 40;   
 });
 
-export let numberOfParticles = 130;
+export let numberOfParticles = window.innerWidth < 1000 ? 40 : 130;
 let maximumSizeOfParticle = 2;
 let minimumSizeOfParticle = 0.5;
 
