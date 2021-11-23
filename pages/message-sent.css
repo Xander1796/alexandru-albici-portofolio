@@ -1,100 +1,207 @@
+:root {
+  --ghost-white: #fcfcff;
+  --light-blue-400: #c0c0ed;
+  --one-hundred-viewport-height: calc(var(--vh, 1vh) * 100);
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
 }
 
 body {
-    background: #11112A;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: var(--one-hundred-viewport-height);
 }
 
-a {
-  text-decoration: none;
-  border: 2px solid #6666B7;
-  padding: .8rem 1.2rem;
-  border-radius: 100px;
-  font-family: 'Mulish', sans-serif;
-  color: #FCFCFF;
-  font-weight: 600;
-  font-size: 20px;
-  transition: .3s ease all;
+.light-theme {
+  background: #393976;
+  color: var(--ghost-white);
 }
 
-svg {
-  padding-bottom: 130px;
-  ;
+.dark-theme {
+  color: var(--light-blue-400);
+  background: #11112a;
 }
 
-a:hover {
-  background: #6666B7;
+html {
+  font-size: 62.5%;
 }
 
 .thank-you-svg-wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
-.thank-you-svg {
-    background: url(thank-you-svg.svg);
+.thank-you-text,
+.plane-svg-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.plane-svg-wrapper {
+  height: calc(var(--one-hundred-viewport-height) / 1.7);
+}
+
+.thank-you-text {
+  opacity: 0;
+  animation: thank-you-text-anim .2s 1.8s ease forwards;
+}
+
+.thank-you-text h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+@keyframes thank-you-text-anim {
+   100% {
+     opacity: 1;
+   }
+}
+
+.thank-you-text svg {
+  margin: 3rem 0;
+}
+
+.contact-icon {
+  width: 7rem;
+}
+
+.light-theme .theme-path {
+  fill: var(--ghost-white);
+}
+
+.dark-theme .theme-path {
+  fill: var(--light-blue-400);
+}
+
+.checked-mail-path {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 10;
+  animation: checked-mail-path-anim .4s 2s ease forwards;
+}
+
+@keyframes checked-mail-path-anim {
+  100% {
+    stroke-dashoffset: 0;
   }
-  
-  #mask0 {
-    stroke-dasharray: 12;
+}
+
+.plane-icon {
+  width: 10rem;
+  position: relative;
+  top: calc(100% - (10rem / 2));
+  animation: plane-icon-anim 2s ease forwards;
+}
+
+@keyframes plane-icon-anim {
+  100% {
+    top: 0;
   }
-  
-  #dotted-line {
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    animation: dash 2s .6s linear forwards;
+}
+
+.dashed-plane-line-svg {
+  height: 100%;
+  width: .4rem;
+}
+
+.light-theme .dashed-plane-line {
+  stroke: var(--ghost-white);
+}
+
+.dark-theme .dashed-plane-line {
+  stroke: var(--light-blue-400);
+}
+
+.dashed-plane-line {
+  stroke-dasharray: 25;
+}
+
+.path-plane-line {
+  stroke-dasharray: 1118;
+  stroke-dashoffset: 0;
+  animation: dash 2s ease forwards;
+}
+
+.light-theme .path-plane-line {
+  stroke: #393976;
+}
+
+.dark-theme .path-plane-line {
+  stroke: #11112a;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 0;
   }
-  
-  @keyframes dash {
-    from {
-      stroke-dashoffset: 2000;
-    }
-    to {
-      stroke-dashoffset: 0;
-    }
+  to {
+    stroke-dashoffset: 1118;
   }
-  
-  #paper-plane {
-    animation: paper-plane-anim .9s ease forwards;
+}
+
+a {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 600;
+  border: 2px solid;
+  border-radius: 10rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  transition: .2s ease background-color;
+}
+
+.light-theme a {
+  color: var(--ghost-white);
+  border-color: #5959b1;
+}
+
+.light-theme a:hover {
+  background: #5959b1;
+}
+
+.dark-theme a {
+  border-color: #414191;
+  color: var(--light-blue-400);
+}
+
+.dark-theme a:hover {
+  background: #414191;
+}
+
+@media (max-width: 500px) {
+  .thank-you-text h1 {
+    font-size: 2rem;
   }
-  
-  @keyframes paper-plane-anim {
-    0% {
-      opacity: 0;
-      transform: translate(-18%, 18%);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translate(0%);
-    }
+
+  .contact-icon {
+    width: 5rem;
   }
-  
-  #thank-you-envelope {
-    opacity: 0;
-    animation: thank-you-envelope .4s 2.4s ease forwards;
+
+  .plane-icon {
+    width: 7rem;
   }
-  
-  @keyframes thank-you-envelope {
-    0% {
-      transform: translateY(-5%);
-      opacity: 0;
-    }
-  
-    100% {
-      transform: translateY(0%);
-      opacity: 1;
-    }
+
+  .dashed-plane-line-svg {
+    width: .2rem;
   }
-  
-  #thank-you-text {
-    opacity: 0;
-    animation: thank-you-envelope .4s 2.6s ease forwards;
+
+  a {
+    font-size: 1.7rem;
+    padding: 1.2rem;
   }
-  
+}
+
+
+

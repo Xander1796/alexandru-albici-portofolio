@@ -21,7 +21,6 @@ const contactSvgPath = document.querySelector('#contact-svg-path');
 // SETTING A VARIABLE FOR THE VH UNIT
 
 let vh;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 window.addEventListener('DOMContentLoaded', function() {
   vh = window.innerHeight * 0.01;
@@ -172,6 +171,10 @@ const contactSectionPlaneDelimitatorObserver = new IntersectionObserver(function
 }, {root: null, threshold: 0.8});
 
 contactSectionPlaneDelimitatorObserver.observe(contactSectionPlaneDelimitator);
+
+document.querySelector('#contact-form-button').addEventListener('submit', function() {
+  alert('yeeeee');
+})
 
 
 

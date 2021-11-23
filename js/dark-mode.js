@@ -17,7 +17,7 @@ if(!localStorage.getItem('theme')) localStorage.setItem('theme', 'light-theme');
 initCheckingTheme();
 
 
-colorSwitcherContainer.addEventListener('click', function() {
+if(colorSwitcherContainer) colorSwitcherContainer.addEventListener('click', function() {
    colorSwitcherContainer.classList.toggle('color-switcher-button-container-light-background');
 
    body.classList.toggle('dark-theme');

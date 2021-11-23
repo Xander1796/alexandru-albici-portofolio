@@ -42,6 +42,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: .2s ease;
+  transition-property: background-color, fill;
 }
 
 html {
@@ -191,7 +193,8 @@ a {
   fill: var(--dark-theme-button-color);
 }
 
-.light-theme .hero-cta {
+.light-theme .hero-cta,
+.light-theme .color-switcher-button {
   background: var(--light-theme-lighter-button-background);
   color: var(--light-theme-button-color);
 }
@@ -1394,10 +1397,6 @@ footer p {
   height: 2rem;
   cursor: pointer;
   z-index: 30;
-}
-
-.light-theme .color-switcher-button {
-  background: #d8d8d9;
 }
 
 .light-theme .color-switcher-button-handle {
