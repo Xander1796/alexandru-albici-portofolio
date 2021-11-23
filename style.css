@@ -33,6 +33,8 @@
   --footer-wave-height: 10rem;
   --nav-height: 7rem;
 
+  --plane-svg-width: 6rem;
+
   --one-hundred-viewport-height: calc(var(--vh, 1vh) * 100);
 }
 
@@ -971,7 +973,7 @@ nav {
 }
 
 .plane-delimitator {
-  width: 6rem;
+  width: var(--plane-svg-width);
   position: relative;
   top: calc(100% - 6rem);
   z-index: 10;
@@ -983,7 +985,7 @@ nav {
 
 @keyframes plane {
   0% {
-    top: calc(100% - 6rem);
+    top: calc(100% - var(--plane-svg-width));
   }
 
   100% {
@@ -992,11 +994,11 @@ nav {
 }
 
 .dashed-plane-line-svg {
-  height: calc(100% - 6rem);
+  height: calc(100% - var(--plane-svg-width));
   width: .2rem;
   position: absolute;
   left: 50%;
-  top: 6rem;
+  top: var(--plane-svg-width);
   transform: translateX(-50%);
 }
 
@@ -1525,6 +1527,7 @@ footer p {
 @media (max-width: 1300px) {
   :root {
     --section-vertical-padding: 6rem;
+    --plane-svg-width: 4rem;
   }
 
   #hero-svg {
@@ -1592,14 +1595,15 @@ footer p {
     }
   
     100% {
-      left: calc(100% - 6rem);
+      left: calc(100% - var(--plane-svg-width));
     }
   }
 
   .dashed-plane-line-svg {
-    height: calc((100vw - var(--section-orizontal-padding) * 2) - (var(--scrollbar-width) + 6rem));
+    height: calc((100vw - var(--section-orizontal-padding) * 2) - (var(--scrollbar-width) + var(--plane-svg-width)));
     top: auto;
-    left: calc(50% - 3rem);
+    width: .1rem;
+    left: calc(50% - (var(--plane-svg-width) / 2));
   }
 
   .additional-contact-info-container h2 {
@@ -1917,6 +1921,10 @@ footer p {
     font-size: 1.6rem;
   }
 
+  .contact-section-plane-delimitator {
+    margin: 4rem 0;
+  }
+
   .additional-contact-info-wrapper h3 {
     margin-bottom: 1.5rem;
   }
@@ -1936,11 +1944,6 @@ footer p {
 
   .contact-form {
     gap: 2rem;
-  }
-
-  .additional-contact-info-container {
-    padding: 4rem 0 0 0;
-    margin: 4rem 0 0 0;
   }
 
   .additional-contact-info-wrapper span,
