@@ -189,8 +189,7 @@ a {
   fill: var(--dark-theme-button-color);
 }
 
-.light-theme .hero-cta,
-.light-theme .color-switcher-button {
+.light-theme .hero-cta {
   background: var(--light-theme-lighter-button-background);
   color: var(--light-theme-button-color);
 }
@@ -272,7 +271,8 @@ a {
 }
 
 .dark-theme .featured-project-name-wrapper-active::after,
-.dark-theme .featured-project-name-wrapper-active::before {
+.dark-theme .featured-project-name-wrapper-active::before,
+.dark-theme .color-switcher-button-handle {
   background: var(--light-blue-400);
 }
 
@@ -1368,60 +1368,42 @@ footer p {
 
 /* COLOR SWITCHER */
 
-.switcher-icon {
+.color-switcher-button-handle {
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  width: 2rem;
-  height: 2rem;
-  transform: translateX(0) rotate(0deg);
-  transition: 0.5s ease transform;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+  transition: 0.3s ease transform;
 }
 
-.move-switcher-icon {
-  transform: translateX(2rem) rotate(360deg);
-}
-
-.color-switcher-wrapper {
-  display: flex;
-  align-items: center;
-  z-index: 10;
+.dark-theme .color-switcher-button-handle {
+  transform: translate(100%, -50%);
 }
 
 .color-switcher-button {
   position: relative;
   border: none;
-  background-color: #44449b;
   border-radius: 10rem;
-  width: 5rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 2rem;
   cursor: pointer;
   z-index: 30;
 }
 
+.light-theme .color-switcher-button {
+  background: #d8d8d9;
+}
+
+.light-theme .color-switcher-button-handle {
+  background: var(--ghost-white);
+}
+
 .light-theme .nav-fixed .color-switcher-button {
   background: var(--light-theme-darker-button-background);
-}
-
-.color-switcher-text {
-  margin-left: 0.6rem;
-}
-
-.color-switcher-button-light-background {
-  background-color: #5555bd;
-}
-
-.remove-moon-spots {
-  fill: none;
-  fill-opacity: 0;
-}
-
-.icon-body-light-color {
-  fill: #fbff49;
-}
-
-.icon-face-light-color {
-  fill: #d1d442;
 }
 
 @media (max-width: 1650px) {
