@@ -30,7 +30,6 @@
   --section-orizontal-padding: 17vw;
   --section-vertical-padding: 8rem;
   --section-wave-delimitator-height: 10rem;
-  --footer-wave-height: 10rem;
   --nav-height: 7rem;
 
   --plane-svg-width: 6rem;
@@ -105,20 +104,14 @@ a {
 
 .dark-theme .link-underline-path,
 .dark-theme .nav-link-underline-path,
-.dark-theme .hover-external-link-icon path,
-.dark-theme .menu-button-icon path {
+.dark-theme .hover-external-link-icon path {
   stroke: var(--light-blue-400);
 }
 
 .light-theme .link-underline-path,
 .light-theme .hover-external-link-icon path,
-.light-theme .nav-fixed .nav-link-underline-path,
-.light-theme .nav-fixed .menu-button-icon path {
+.light-theme .nav-fixed .nav-link-underline-path {
   stroke: var(--ghost-white);
-}
-
-.light-theme .menu-button-icon path {
-  stroke: var(--dark-blue-700);
 }
 
 .light-theme .nav-link-underline-path {
@@ -134,11 +127,11 @@ a {
 }
 
 .dark-theme #top-circle {
-  stroke: #7474ff;
+  stroke: var(--dark-theme-button-background);
 }
 
 .dark-theme #bottom-circle {
-  stroke: #42427e;
+  stroke: #22224e;
 }
 
 .dark-theme nav a,
@@ -160,13 +153,15 @@ a {
 .dark-theme .additional-contact-info-icon,
 .dark-theme .close-menu-button-icon path,
 .dark-theme .hero-svg-icon path,
-.dark-theme .scroll-down-wrapper svg path {
+.dark-theme .scroll-down-wrapper svg path,
+.dark-theme .menu-button-icon path {
   fill: var(--light-blue-400);
 }
 
 .light-theme .nav-link-icon path,
 .light-theme .hero-svg-icon path,
-.light-theme .scroll-down-wrapper svg path {
+.light-theme .scroll-down-wrapper svg path,
+.light-theme .menu-button-icon path  {
   fill: var(--dark-blue-700);
 }
 
@@ -223,7 +218,8 @@ a {
 .light-theme .social-icon path,
 .light-theme .button-icon path,
 .light-theme .message-copied svg path,
-.light-theme .close-menu-button-icon path {
+.light-theme .close-menu-button-icon path,
+.light-theme .nav-fixed .menu-button-icon path {
   fill: var(--ghost-white);
 }
 
@@ -276,8 +272,7 @@ a {
 }
 
 .dark-theme .featured-project-name-wrapper-active::after,
-.dark-theme .featured-project-name-wrapper-active::before,
-.dark-theme .color-switcher-button-handle {
+.dark-theme .featured-project-name-wrapper-active::before {
   background: var(--light-blue-400);
 }
 
@@ -290,12 +285,14 @@ a {
 }
 
 .dark-theme .projects-section,
-.dark-theme .contact-section {
+.dark-theme .contact-section,
+.dark-theme footer {
   background: var(--dark-blue-800);
 }
 
 .light-theme .projects-section,
-.light-theme .contact-section {
+.light-theme .contact-section,
+.light-theme footer {
   background: var(--light-blue-700);
 }
 
@@ -307,23 +304,19 @@ a {
   background: #28285a;
 }
 
-.dark-theme .about-section,
-.dark-theme footer {
+.dark-theme .about-section {
   background: var(--dark-blue-600);
 }
 
-.dark-theme .about-section-wave-delimitator path,
-.dark-theme .footer-wave path {
+.dark-theme .about-section-wave-delimitator path {
   fill: var(--dark-blue-600);
 }
 
-.light-theme .about-section-wave-delimitator path,
-.light-theme .footer-wave path {
+.light-theme .about-section-wave-delimitator path {
   fill: var(--light-blue-900);
 }
 
-.light-theme .about-section,
-.light-theme footer {
+.light-theme .about-section {
   background: var(--light-blue-900);
 }
 
@@ -878,9 +871,7 @@ nav {
   padding-top: calc(
     var(--section-vertical-padding) + var(--section-wave-delimitator-height)
   );
-  padding-bottom: calc(
-    var(--section-vertical-padding) + var(--footer-wave-height)
-  );
+  padding-bottom: var(--section-vertical-padding);
 }
 
 .section-wave-delimitator {
@@ -1287,46 +1278,34 @@ nav {
 footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 10rem;
+  padding: 3rem var(--section-orizontal-padding);
   position: relative;
   width: 100%;
-  padding-bottom: calc(var(--footer-wave-height) / 2);
+  border-top: 1px solid;
 }
 
-footer div {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.light-theme footer {
+  border-color: #494997;
 }
 
-.footer-wave {
-  position: absolute;
-  height: var(--footer-wave-height);
-  width: 100%;
-  top: calc((var(--footer-wave-height) - 0.5rem) * -1);
-  left: 0;
-}
-
-footer h4 {
-  font-size: 1.8rem;
-  font-weight: 600;
+.dark-theme footer {
+  border-color: #1f1f4c;
 }
 
 footer p {
   font-weight: 400;
-  font-size: 1.6rem;
-  margin-top: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .footer-go-up-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5rem;
-  width: 5rem;
+  height: 4.3rem;
+  width: 4.3rem;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.2s ease background-color;
@@ -1334,8 +1313,8 @@ footer p {
 }
 
 .footer-go-up-button svg {
-  height: 3rem;
-  width: 3rem;
+  height: 2.6rem;
+  width: 2.6rem;
 }
 
 .hero-section-anim-element {
@@ -1387,6 +1366,7 @@ footer p {
 
 .dark-theme .color-switcher-button-handle {
   transform: translate(100%, -50%);
+  background: var(--dark-theme-button-color);
 }
 
 .color-switcher-button {
@@ -1465,28 +1445,14 @@ footer p {
 .menu-button {
   display: flex;
   flex-direction: column;
-  width: 3.3rem;
   overflow: hidden;
   cursor: pointer;
   z-index: 30;
-}
-
-.menu-button:hover .menu-button-icon {
-  animation: menu-button-hover-anim 7.5s linear infinite;
-}
-
-@keyframes menu-button-hover-anim {
-  100% {
-    transform: translateX(-15rem);
-  }
+  padding: .2rem .5rem;
 }
 
 .menu-button-icon {
-  cursor: pointer;
-}
-
-.menu-button-icon:not(:last-of-type) {
-  margin-bottom: 0.3rem;
+  width: 3.3rem;
 }
 
 .close-menu-button {
@@ -1508,7 +1474,7 @@ footer p {
 }
 
 .ham-menu-overlay {
-  display: inline-block !important;
+  visibility: visible !important;
 }
 
 @media (min-width: 2000px) {
@@ -1637,11 +1603,10 @@ footer p {
 @media (max-width: 950px) {
   :root {
     --section-wave-delimitator-height: 5rem;
-    --footer-wave-height: 5rem;
   }
 
   .nav-links {
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -1736,8 +1701,6 @@ footer p {
   }
 
   footer {
-    padding: calc(var(--footer-wave-height) / 2)
-      var(--section-orizontal-padding);
     gap: 3rem;
   }
 
@@ -1784,12 +1747,17 @@ footer p {
     --section-orizontal-padding: 7vw;
     --section-vertical-padding: 4rem;
     --section-wave-delimitator-height: 3rem;
-    --footer-wave-height: 3rem;
   }
 
   .message-copied {
     font-size: 1.6rem;
     padding: 1rem;
+  }
+
+  .hover-external-link-icon,
+  .nav-link-underline,
+  .link-underline-svg {
+    display: none;
   }
 
   .message-copied svg {
@@ -1956,14 +1924,19 @@ footer p {
     height: 3.7rem;
   }
 
+  footer {
+    padding: 2rem var(--section-orizontal-padding);
+    gap: 2rem;
+  }
+
   .footer-go-up-button {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   .footer-go-up-button svg {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
   }
 }
 

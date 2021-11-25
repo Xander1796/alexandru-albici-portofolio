@@ -37,7 +37,8 @@ window.addEventListener('resize', function() {
 
 
 heroSectionAnimElement.forEach((anim, i) => {
-  anim.style.animation = `hero-section-anim .4s ${.2 * i}s cubic-bezier(.61,.09,.54,.97) forwards`;
+  anim.style.animation = `hero-section-anim .4s cubic-bezier(.61,.09,.54,.97) ${.2 * i}s forwards`;
+  anim.style.animationIterationCount = '1';
 });
 
 projectsLinks.forEach((link) => {
@@ -172,9 +173,6 @@ const contactSectionPlaneDelimitatorObserver = new IntersectionObserver(function
 
 contactSectionPlaneDelimitatorObserver.observe(contactSectionPlaneDelimitator);
 
-document.querySelector('#contact-form-button').addEventListener('submit', function() {
-  alert('yeeeee');
-})
 
 
 
