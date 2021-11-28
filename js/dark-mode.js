@@ -25,3 +25,8 @@ if(colorSwitcherContainer) colorSwitcherContainer.addEventListener('click', func
 
    body.classList.contains('light-theme') ? localStorage.setItem('theme', 'light-theme') : localStorage.setItem('theme', 'dark-theme');
 });
+
+
+
+
+

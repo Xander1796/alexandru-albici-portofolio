@@ -102,20 +102,12 @@ a {
   fill: var(--ghost-white);
 }
 
-.dark-theme .link-underline-path,
-.dark-theme .nav-link-underline-path,
 .dark-theme .hover-external-link-icon path {
   stroke: var(--light-blue-400);
 }
 
-.light-theme .link-underline-path,
-.light-theme .hover-external-link-icon path,
-.light-theme .nav-fixed .nav-link-underline-path {
+.light-theme .hover-external-link-icon path {
   stroke: var(--ghost-white);
-}
-
-.light-theme .nav-link-underline-path {
-  stroke: var(--dark-blue-700);
 }
 
 .light-theme #top-circle {
@@ -169,7 +161,10 @@ a {
 .dark-theme #contact-form-button,
 .dark-theme .footer-go-up-button,
 .dark-theme .message-copied,
-.dark-theme .color-switcher-button {
+.dark-theme .color-switcher-button,
+.dark-theme .nav-link::after,
+.dark-theme .featured-project-name::after,
+.dark-theme .featured-project-link::after {
   background: var(--dark-theme-button-background);
   color: var(--dark-theme-button-color);
 }
@@ -189,7 +184,8 @@ a {
 }
 
 .light-theme .hero-cta,
-.light-theme .color-switcher-button {
+.light-theme .color-switcher-button,
+.nav-link::after {
   background: var(--light-theme-lighter-button-background);
   color: var(--light-theme-button-color);
 }
@@ -200,7 +196,10 @@ a {
 
 .light-theme #contact-form-button,
 .light-theme .footer-go-up-button,
-.light-theme .message-copied {
+.light-theme .message-copied,
+.light-theme .nav-fixed .nav-link::after,
+.light-theme .featured-project-name::after,
+.light-theme .featured-project-link::after {
   background: var(--light-theme-darker-button-background);
   color: var(--ghost-white);
 }
@@ -514,34 +513,6 @@ nav {
   font-weight: 600;
 }
 
-.nav-link-underline,
-.link-underline-svg {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  left: 0;
-  bottom: -50%;
-  stroke-width: 1.5px;
-}
-
-.nav-link-underline-path,
-.link-underline-path {
-  stroke-dasharray: 100;
-  stroke-dashoffset: 100;
-  transition: 0.5s ease all;
-}
-
-.link-underline-path-long {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-}
-
-.nav-link:hover .nav-link-underline-path,
-.featured-project-link:hover .link-underline-path,
-.featured-project-name:hover .link-underline-path {
-  stroke-dashoffset: 0;
-}
-
 .nav-link:not(:last-of-type) {
   margin-right: 3rem;
 }
@@ -549,6 +520,26 @@ nav {
 .nav-link a {
   display: flex;
   align-items: center;
+}
+
+.nav-link::after,
+.featured-project-link::after,
+.featured-project-name::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  left: 0;
+  bottom: -6px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: .3s ease transform;
+}
+
+.nav-link:hover::after,
+.featured-project-link:hover::after,
+.featured-project-name:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-link-icon {
@@ -1624,10 +1615,6 @@ footer p {
     color: var(--ghost-white);
   }
 
-  .light-theme .nav-link .nav-link-underline-path {
-    stroke: var(--ghost-white);
-  }
-
   .nav-links ul {
     width: 30rem;
     height: 100%;
@@ -1755,8 +1742,9 @@ footer p {
   }
 
   .hover-external-link-icon,
-  .nav-link-underline,
-  .link-underline-svg {
+  .nav-fixed .nav-link::after,
+  .featured-project-name::after,
+  .featured-project-link::after {
     display: none;
   }
 
@@ -1980,6 +1968,8 @@ footer p {
     display: flex;
   }
 }
+
+
 
 
 
