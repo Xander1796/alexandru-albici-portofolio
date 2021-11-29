@@ -151,9 +151,17 @@ featuredProjectName.forEach(name => featuredProjectNameObserver.observe(name));
 let featuredProjectObserver = new IntersectionObserver(function(entries) {
   let [entry] = entries;
   
-  if(entry.isIntersecting) entry.target.classList.add('featured-project-active');
+  if(entry.isIntersecting) {
 
-}, {root: null, threshold: [.3, .4]});
+    if(entry.target.classList.contains('featured-project-left')) {
+      entry.target.classList.add('featured-project-left-active');
+    } else if(entry.target.classList.contains('featured-project-right')) {
+      entry.target.classList.add('featured-project-right-active');
+    }
+
+  }
+
+}, {root: null, threshold: [.3, .4, .5]});
 
 featuredProject.forEach(project => featuredProjectObserver.observe(project));
 

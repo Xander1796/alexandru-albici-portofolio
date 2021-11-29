@@ -689,19 +689,37 @@ nav {
 }
 
 .featured-project {
-  transform: translateY(20%);
   opacity: 0;
   display: flex;
   position: relative;
 }
 
-.featured-project-active {
-  animation: featured-project-active-anim 0.5s ease forwards;
+.featured-project-left  {
+  transform: translateX(20%);
 }
 
-@keyframes featured-project-active-anim {
+.featured-project-right  {
+  transform: translateX(-20%);
+}
+
+.featured-project-left-active {
+  animation: featured-project-left-active-anim 1s ease forwards;
+}
+
+.featured-project-right-active {
+  animation: featured-project-right-active-anim 1s ease forwards;
+}
+
+@keyframes featured-project-left-active-anim {
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes featured-project-right-active-anim {
+  100% {
+    transform: translateX(0);
     opacity: 1;
   }
 }
