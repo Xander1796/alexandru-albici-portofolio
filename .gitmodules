@@ -1,9 +1,9 @@
 [submodule "movieflix"]
-	path = movieflix
+	path = MOVIEFLIX
 	url = https://github.com/Xander1796/movieflix.git
 [submodule "Pizzaiolo"]
-	path = Pizzaiolo
+	path = PIZZAIOLO
 	url = https://github.com/Xander1796/Pizzaiolo.git
 [submodule "Notes"]
-	path = Notes
+	path = NOTES
 	url = https://github.com/Xander1796/Notes.git
