@@ -532,7 +532,7 @@ nav {
   left: 0;
   bottom: -6px;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: right;
   transition: .3s ease transform;
 }
 
@@ -540,6 +540,7 @@ nav {
 .featured-project-link:hover::after,
 .featured-project-name:hover::after {
   transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-link-icon {
@@ -1869,7 +1870,6 @@ footer p {
   .skills-tech-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 3%;
   }
 
   .skill-tech {
