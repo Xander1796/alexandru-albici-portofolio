@@ -84,7 +84,7 @@ copyButton.forEach(button => button.addEventListener('click', async function() {
 
 let navObserverCallback = function(entries) {
   let [entry] = entries;
-console.log(entry)
+
   if(entry.isIntersecting) {
       if(nav.classList.contains('nav-fixed') ) nav.classList.add('remove-nav-fixed');
 
