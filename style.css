@@ -242,11 +242,11 @@ a {
 }
 
 .dark-theme .featured-project-link-icon {
-  background: url(svgs/dark-theme-link-icon.svg);
+  background: url(svgs/dark-theme-live-project-icon.svg);
 }
 
 .dark-theme .featured-project-code-icon {
-  background: url(svgs/dark-theme-github-icon.svg);
+  background: url(svgs/dark-theme-code-project-icon.svg);
 }
 
 .dark-theme .featured-project-portofolio-link-icon {
@@ -254,11 +254,11 @@ a {
 }
 
 .light-theme .featured-project-link-icon {
-  background: url(svgs/light-theme-link-icon.svg);
+  background: url(svgs/light-theme-live-project-icon.svg);
 }
 
 .light-theme .featured-project-code-icon {
-  background: url(svgs/light-theme-github-icon.svg);
+  background: url(svgs/light-theme-code-project-icon.svg);
 }
 
 .light-theme .featured-project-portofolio-link-icon {
@@ -843,8 +843,8 @@ nav {
 .featured-project-link-icon,
 .featured-project-code-icon,
 .featured-project-portofolio-link-icon {
-  width: 1.9rem;
-  height: 1.9rem;
+  width: 2rem;
+  height: 2rem;
   background-repeat: no-repeat;
   margin-left: 0.8rem;
 }
