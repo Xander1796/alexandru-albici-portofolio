@@ -41,6 +41,26 @@ body {
   font-family: "Mulish", "sans-serif";
 }
 
+#contact-message::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  background: #0d3053;
+  border-radius: 0 .5rem .5rem 0;
+}
+
+html::-webkit-scrollbar {
+  border-radius: 0;
+}
+
+#contact-message::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background: #134374;
+}
+
+#contact-message::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover {
+  background: #154d85;
+}
+
 main,
 body {
   overflow-x: hidden;
@@ -127,7 +147,7 @@ footer {
   height: 4.2rem;
   cursor: pointer;
   background: var(--theme-dark-accent-color);
-  border: .3rem solid var(--theme-white-background);
+  border: .4rem solid var(--theme-white-background);
   border-radius: 50%;
   transition: .2s ease transform;
 }
@@ -406,7 +426,7 @@ nav {
 }
 
 .hero-contact-cta:hover {
-  background: #0c2e4e17;
+  background: #0c2e4e0f;
 }
 
 .hero-contact-cta:hover svg path {
@@ -1602,5 +1622,7 @@ footer p {
     width: 11rem;
   }
 }
+
+
 
 
