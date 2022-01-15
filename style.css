@@ -5,8 +5,8 @@
   --theme-white-background: #f6f9fc;
   --theme-white-color-1: #0a2540;
   --theme-white-color-2: #425466;
-  --theme-white-accent-color: #635bff;
-  --theme-white-button-color: #635bff;
+  --theme-white-accent-color: #1A73E8;
+  --theme-white-button-color: #1A73E8;
 
   --theme-dark-background: #0a2540;
   --theme-dark-color-1: #adbdcc;
@@ -146,10 +146,14 @@ footer {
   width: 4.2rem;
   height: 4.2rem;
   cursor: pointer;
-  background: var(--theme-dark-accent-color);
+  background: var(--theme-white-accent-color);
   border: .4rem solid var(--theme-white-background);
   border-radius: 50%;
-  transition: .2s ease transform;
+  transition: .2s ease background-color;
+}
+
+.scroll-down-arrow:hover {
+  background: #1b5bc4;
 }
 
 .scroll-down-arrow svg  {
@@ -163,12 +167,12 @@ footer {
   }
 
   100% {
-    transform: translateY(10%);
+    transform: translateY(15%);
   }
 }
 
 .scroll-down-arrow svg polyline {
-  stroke: var(--theme-white-color-1);
+  stroke: var(--white-color);
 }
 
 @keyframes hero-section-anim {
@@ -332,10 +336,6 @@ nav {
   color: var(--theme-white-accent-color);
 }
 
-.nav-link:hover::after {
-  transform: translateX(-50%) scale(1);
-}
-
 .nav-link:not(:last-of-type) {
   margin-right: 5rem;
 }
@@ -400,37 +400,39 @@ nav {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  transition: 0.2s ease background-color;
+  transition: 0.2s ease;
+  transition-property: border-color color;
 }
 
 .hero-projects-cta {
-  border: 2px solid var(--theme-white-accent-color);
+  border: 1px solid var(--theme-white-accent-color);
   background: var(--theme-white-accent-color);
   color: var(--white-color);
 }
 
 .hero-contact-cta {
-  border: 2px solid var(--theme-dark-color-2);
-  color: var(--theme-dark-color-2);
+  border: 1px solid #DADCE0;
+  color: var(--theme-white-accent-color);
   margin-left: 1.3rem;
 }
 
-.hero-contact-cta svg {
-  stroke: var(--theme-dark-color-2);
+.hero-contact-cta svg path{
+  stroke: var(--theme-white-accent-color);
   transition: .2s ease all;
 }
 
 .hero-projects-cta:hover {
-  background: #4f46ff;
-  border-color: #4f46ff;
-}
-
-.hero-contact-cta:hover {
-  background: #0c2e4e0f;
+  background: #1b5bc4;
+  border-color: #1b5bc4;
 }
 
 .hero-contact-cta:hover svg path {
-  fill: var(--theme-dark-color-2);
+  stroke: #174EA6;
+}
+
+.hero-contact-cta:hover {
+  color: #174EA6;
+  border-color: var(--theme-white-accent-color);
 }
 
 .hero-cta-text {
@@ -862,26 +864,29 @@ nav {
 .message-sent {
   position: fixed;
   left: 50%;
+  width: fit-content;
   transform: translateX(-50%);
-  background: #2A70B7;
-  color: var(--white-color);
+  background: #00ABCF;
+  color: var(--theme-dark-color-2);
+  font-weight: 600;
   box-shadow: 3px 3px 30px rgba(0, 0, 0, .1);
-  font-size: 1.8rem;
-  padding: .6rem .8rem;
+  font-size: 2rem;
+  padding: 2rem 2.5rem;
   border-radius: .5rem;
-  top: calc(var(--nav-height) + 2%);
+  bottom: 3%;
   animation: message-sent-anim .4s ease forwards;
+  z-index: 100;
 }
 
 @keyframes message-sent-anim {
   0% {
     opacity: 0;
-    transform: translateY(-45%);
+    transform: translateY(45%) translateX(-50%);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(0%) translateX(-50%);
   }
 }
 
@@ -929,6 +934,7 @@ nav {
 }
 
 .contact-form input {
+  position: relative;
   height: 5rem;
   font-size: 1.7rem;
   font-family: "Mulish", sans-serif;
