@@ -708,6 +708,11 @@ nav {
   width: 40rem;
 }
 
+.featured-project-technologies,
+.featured-project-description {
+  width: 40rem;
+}
+
 .featured-project-technologies {
   display: flex;
   flex-wrap: wrap;
@@ -718,6 +723,9 @@ nav {
 .featured-project-tech {
   font-weight: 600;
   font-size: 1.3rem;
+  background: var(--theme-dark-color-2);
+  border-radius: .5rem;
+  padding: .5rem;
   color: var(--theme-dark-accent-color);
 }
 
@@ -1164,7 +1172,8 @@ footer p {
     width: 56%;
   }
 
-  .featured-project-description {
+  .featured-project-description,
+  .featured-project-technologies {
     width: 30rem;
   }
 }
@@ -1174,7 +1183,8 @@ footer p {
     flex-direction: column-reverse;
   }
 
-  .featured-project-description {
+  .featured-project-description,
+  .featured-project-technologies {
     width: auto;
   }
 
