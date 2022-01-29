@@ -2,15 +2,10 @@
 
 const body = document.querySelector("body");
 const copyButton = document.querySelectorAll(".copy-button");
-const hoverExternalLinkIcon = document.querySelector(
-  ".hover-external-link-icon"
-);
-const wave = document.querySelector(".section-wave-delimitator-svg");
+
 const nav = document.querySelector("nav");
 const navLinks = document.querySelector(".nav-links");
-const navLinkUnderlinePath = document.querySelectorAll(
-  ".nav-link-underline-path"
-);
+
 const heroSectionAnimElement = document.querySelectorAll(
   ".hero-section-anim-element"
 );
@@ -20,9 +15,6 @@ const projectsLinks = document.querySelectorAll(".hover-external-link");
 const heroSection = document.querySelector(".hero-section");
 const featuredProject = document.querySelectorAll(".featured-project");
 const featuredProjectName = document.querySelectorAll(".featured-project-name");
-const mailSvg = document.querySelector("#mail-svg");
-const contactSvgMail = document.querySelector("#contact-svg-mail");
-const contactSvgPath = document.querySelector("#contact-svg-path");
 
 // SETTING A VARIABLE FOR THE VH UNIT
 
@@ -123,47 +115,6 @@ nav.addEventListener("click", function (e) {
     body.style.width = "auto";
   }
 });
-
-const navLink = [...document.querySelectorAll(".nav-link")];
-let allLink = [...navLink];
-
-let featuredProjectNameObserver = new IntersectionObserver(
-  function (entries) {
-    let [entry] = entries;
-
-    if (entry.isIntersecting) {
-      entry.target.parentElement.classList.add(
-        "featured-project-name-wrapper-active"
-      );
-      entry.target.parentElement.classList.add(
-        "featured-project-name-wrapper-active"
-      );
-      entry.target.classList.add("featured-project-name-active");
-    }
-  },
-  { root: null, threshold: 1 }
-);
-
-featuredProjectName.forEach((name) =>
-  featuredProjectNameObserver.observe(name)
-);
-
-let featuredProjectObserver = new IntersectionObserver(
-  function (entries) {
-    let [entry] = entries;
-
-    if (entry.isIntersecting) {
-      if (entry.target.classList.contains("featured-project-left")) {
-        entry.target.classList.add("featured-project-left-active");
-      } else if (entry.target.classList.contains("featured-project-right")) {
-        entry.target.classList.add("featured-project-right-active");
-      }
-    }
-  },
-  { root: null, threshold: [0.3, 0.4, 0.5] }
-);
-
-featuredProject.forEach((project) => featuredProjectObserver.observe(project));
 
 // HANDLE FORM SUBMIT WITH NETLIFY FORMS
 
