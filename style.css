@@ -642,7 +642,8 @@ nav {
 
 .skills-tech-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, 10rem);
+  justify-content: space-between;
   gap: 3rem;
 }
 
@@ -1084,11 +1085,6 @@ footer p {
   :root {
     --section-orizontal-padding: 14vw;
   }
-
-  .skills-tech-wrapper {
-    grid-template-columns: repeat(auto-fill, 10rem);
-    justify-content: space-between;
-  }
 }
 
 @media (max-width: 1500px) {
@@ -1444,7 +1440,6 @@ footer p {
   }
 
   .skills-tech-wrapper {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
