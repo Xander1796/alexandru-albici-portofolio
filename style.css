@@ -80,6 +80,7 @@ body {
 
 .arrow-svg path {
   transition: 0.1s ease all;
+  stroke-width: .8px;
 }
 
 .hero-projects-cta:hover .arrow-svg .line,
@@ -634,6 +635,11 @@ nav {
   display: flex;
 }
 
+.about-section-skills-wrapper,
+.about-section-about-wrapper {
+  flex: 1;
+}
+
 .skills-tech-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -910,17 +916,19 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 10rem;
   background: #2a70b7;
   color: var(--white-color);
   text-transform: capitalize;
   cursor: pointer;
   height: 6rem;
+  width: fit-content;
+  padding: .8rem 2rem;
   transition: 0.2s ease background-color;
 }
 
 #contact-form-button .arrow-svg {
-  width: 1.5rem;
+  width: 1.4rem;
 }
 
 #contact-form-button .arrow-svg path {
@@ -928,7 +936,7 @@ nav {
 }
 
 .button-text {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
@@ -1190,11 +1198,6 @@ footer p {
     flex-direction: column;
   }
 
-  .skills-tech-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   .about-section-about-wrapper {
     margin: 7rem 0 0 0;
   }
@@ -1222,10 +1225,6 @@ footer p {
 
   .contact-form-wrapper p {
     width: auto;
-  }
-
-  #contact-form-button {
-    width: 30rem;
   }
 
   .additional-contact-info-container h2 {
@@ -1331,10 +1330,6 @@ footer p {
 @media (max-width: 650px) {
   .additional-contact-info-wrapper span {
     margin-left: 8rem;
-  }
-
-  #contact-form-button {
-    width: 100%;
   }
 
   .contact-form {
@@ -1484,10 +1479,6 @@ footer p {
 
   #contact-message {
     height: 14rem;
-  }
-
-  #contact-form-button {
-    height: 5rem;
   }
 
   .additional-contact-info-wrapper span,
