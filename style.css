@@ -455,17 +455,16 @@ nav {
   color: var(--ghost-white);
   position: relative;
   margin-bottom: 11rem;
-  margin-left: 1rem;
 }
 
 .section-title::before {
   position: absolute;
   content: "";
-  height: 40%;
-  width: 2px;
-  left: -1rem;
-  top: 50%;
-  transform: translateY(-50%);
+  height: .5rem;
+  width: 100%;
+  border-radius: 10rem;
+  left: 0;
+  bottom: -.8rem;
 }
 
 .projects-section,
@@ -488,26 +487,18 @@ nav {
 }
 
 .projects-section .section-title::before {
-  background: var(--theme-dark-accent-color);
+  background: linear-gradient(to right, var(--theme-dark-accent-color), #3369b1);
 }
 
 .featured-project {
   display: flex;
+  justify-content: space-between;
   position: relative;
 }
 
-.featured-project-left {
-  justify-content: space-between;
-}
-
-.featured-project-right {
-  justify-content: space-between;
-  flex-direction: row-reverse;
-}
-
-.featured-project-left {
-  display: flex;
-  justify-content: space-between;
+.projects-section .featured-project:not(:last-of-type) {
+  border-bottom: 1px solid var(--theme-dark-color-2);
+  padding-bottom: 4rem;
 }
 
 .featured-project-img {
@@ -550,15 +541,11 @@ nav {
   display: flex;
   align-items: center;
   position: relative;
-  margin: 8rem 0 6rem 0;
+  margin: 4rem 0 6rem 0;
 }
 
 .featured-project-name-wrapper:nth-of-type(2) {
   margin-top: 0;
-}
-
-.featured-project-name-wrapper-right {
-  justify-content: flex-end;
 }
 
 .featured-project-link {
@@ -718,8 +705,8 @@ nav {
   color: var(--theme-white-color-1);
 }
 
-.about-section ::before {
-  background: var(--theme-white-accent-color);
+.about-section .section-title::before {
+  background: linear-gradient(to right, var(--theme-white-accent-color), #3369b1);
 }
 
 .about-section-content h2 {
@@ -759,7 +746,7 @@ nav {
 }
 
 .contact-section .section-title::before {
-  background: var(--theme-dark-accent-color);
+  background: linear-gradient(to right, var(--theme-dark-accent-color), #3369b1);
 }
 
 .additional-contact-info-container h2 {
@@ -1127,10 +1114,6 @@ footer p {
 
   .featured-project-details {
     margin-bottom: 5rem;
-  }
-
-  .featured-project-name-wrapper-right {
-    justify-content: flex-start;
   }
 }
 
