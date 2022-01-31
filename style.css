@@ -802,10 +802,11 @@ nav {
   left: 50%;
   width: fit-content;
   transform: translateX(-50%);
-  background: #00abcf;
-  color: var(--theme-dark-color-2);
+  background: var(--white-color);
+  color: var(--theme-white-color-1);
   font-weight: 600;
-  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid var(--theme-white-accent-color);
   font-size: 2rem;
   padding: 2rem 2.5rem;
   border-radius: 0.5rem;
