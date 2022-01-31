@@ -62,31 +62,59 @@ copyButton.forEach((button) =>
 
 // INTERSECTION OBSERVERS
 
-let navObserverCallback = function (entries) {
+let heroSectionObserverCallback = function (entries) {
   let [entry] = entries;
-
-  if (entry.isIntersecting) {
-    if (nav.classList.contains("nav-fixed"))
-      nav.classList.add("remove-nav-fixed");
-
-    setTimeout(function () {
-      nav.classList.remove("remove-nav-fixed");
-      nav.classList.remove("nav-fixed");
-      heroSection.classList.remove("hero-section-margin");
-    }, 300);
+  if (entry.intersectionRatio > 0) {
+    heroSection.classList.remove("hero-section-margin");
+    nav.classList.remove("nav-fixed");
+    nav.classList.remove("theme-dark-nav-fixed");
   } else {
-    entry.boundingClientRect.top;
-    nav.classList.add("nav-fixed");
     heroSection.classList.add("hero-section-margin");
+
+    nav.classList.add("nav-fixed");
+    if (
+      entry.isIntersecting === false &&
+      !nav.classList.contains("theme-white-nav-fixed")
+    ) {
+      nav.classList.remove("theme-white-nav-fixed");
+      nav.classList.add("theme-dark-nav-fixed");
+    }
   }
 };
 
-const navObserver = new IntersectionObserver(navObserverCallback, {
-  root: null,
-  threshold: 0,
-});
+const observeHeroSection = new IntersectionObserver(
+  heroSectionObserverCallback,
+  {
+    root: null,
+    threshold: 0,
+  }
+);
 
-navObserver.observe(heroSection);
+observeHeroSection.observe(heroSection);
+
+const observeProjectSection = new IntersectionObserver(
+  (entries) => {
+    let [entry] = entries;
+
+    if (entry.intersectionRatio === 0 && entry.isIntersecting === false) {
+      nav.classList.add("theme-white-nav-fixed");
+      nav.classList.remove("theme-dark-nav-fixed");
+    } else if (
+      entry.isIntersecting === true &&
+      nav.classList.contains("nav-fixed")
+    ) {
+      nav.classList.add("theme-dark-nav-fixed");
+      nav.classList.remove("theme-white-nav-fixed");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "80px",
+  }
+);
+
+observeProjectSection.observe(document.querySelector(".projects-section"));
 
 nav.addEventListener("click", function (e) {
   if (e.target.classList.contains("ham-button")) {
@@ -134,7 +162,8 @@ const handleSubmit = (e) => {
     body: new URLSearchParams(formData).toString(),
   })
     .then(() => {
-      if (body.querySelector(".message-sent")) body.querySelector(".message-sent").remove();
+      if (body.querySelector(".message-sent"))
+        body.querySelector(".message-sent").remove();
       clearTimeout(messageSentTimeoutFunction);
 
       const messageSent = document.createElement("div");
@@ -142,11 +171,12 @@ const handleSubmit = (e) => {
       messageSent.textContent = "Message Sent!";
       body.appendChild(messageSent);
 
-      document.querySelectorAll('input').forEach(input => input.value = '');
-      document.querySelector('textarea').value = '';
+      document.querySelectorAll("input").forEach((input) => (input.value = ""));
+      document.querySelector("textarea").value = "";
 
       messageSentTimeoutFunction = setTimeout(() => {
-        if (body.querySelector(".message-sent")) body.querySelector(".message-sent").remove();
+        if (body.querySelector(".message-sent"))
+          body.querySelector(".message-sent").remove();
       }, 4000);
     })
     .catch((error) => alert(error));
