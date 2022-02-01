@@ -65,9 +65,11 @@ copyButton.forEach((button) =>
 let heroSectionObserverCallback = function (entries) {
   let [entry] = entries;
   if (entry.intersectionRatio > 0) {
+    heroSection.classList.remove("hero-section-margin");
     nav.classList.remove("nav-fixed");
     nav.classList.remove("theme-dark-nav-fixed");
   } else {
+    heroSection.classList.add("hero-section-margin");
 
     nav.classList.add("nav-fixed");
     if (

@@ -218,7 +218,7 @@ nav {
 }
 
 .nav-fixed {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   animation: nav-fixed 0.3s ease forwards;
