@@ -65,11 +65,9 @@ copyButton.forEach((button) =>
 let heroSectionObserverCallback = function (entries) {
   let [entry] = entries;
   if (entry.intersectionRatio > 0) {
-    heroSection.classList.remove("hero-section-margin");
     nav.classList.remove("nav-fixed");
     nav.classList.remove("theme-dark-nav-fixed");
   } else {
-    heroSection.classList.add("hero-section-margin");
 
     nav.classList.add("nav-fixed");
     if (
@@ -168,6 +166,7 @@ const handleSubmit = (e) => {
 
       const messageSent = document.createElement("div");
       messageSent.classList.add("message-sent");
+      messageSent.classList.add('success');
       messageSent.textContent = "Message Sent!";
       body.appendChild(messageSent);
 

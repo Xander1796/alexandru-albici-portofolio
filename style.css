@@ -218,7 +218,8 @@ nav {
 }
 
 .nav-fixed {
-  position: fixed;
+  position: sticky;
+  top: 0;
   width: 100%;
   animation: nav-fixed 0.3s ease forwards;
 }
@@ -364,7 +365,7 @@ nav {
 }
 
 #hero-svg {
-  width: 25rem;
+  width: 40rem;
   height: auto;
   z-index: -1;
 }
@@ -395,7 +396,7 @@ nav {
 
 .hero-cta {
   padding: 1.5rem 1rem;
-  border-radius: 10rem;
+  border-radius: 1rem;
   display: inline-flex;
   align-items: center;
   width: fit-content;
@@ -404,34 +405,33 @@ nav {
 }
 
 .hero-projects-cta {
-  border: 1px solid var(--theme-white-accent-color);
   background: var(--theme-white-accent-color);
   color: var(--white-color);
+  box-shadow: 0px 4px 10px #1a73e836;
 }
 
 .hero-contact-cta {
-  border: 1px solid #dadce0;
-  color: var(--theme-white-accent-color);
+  color: var(--theme-white-color-1);
+  background: var(--white-color);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, .15);
   margin-left: 1.3rem;
 }
 
 .hero-contact-cta svg path {
-  stroke: var(--theme-white-accent-color);
+  stroke: var(--theme-white-color-1);
   transition: 0.2s ease all;
 }
 
 .hero-projects-cta:hover {
   background: #1b5bc4;
-  border-color: #1b5bc4;
 }
 
 .hero-contact-cta:hover svg path {
-  stroke: #174ea6;
+  stroke: var(--theme-white-accent-color);
 }
 
 .hero-contact-cta:hover {
-  color: #174ea6;
-  border-color: var(--theme-white-accent-color);
+  color: var(--theme-white-accent-color);
 }
 
 .hero-cta-text {
@@ -1196,7 +1196,7 @@ footer p {
   }
 
   #hero-svg {
-    width: 23rem;
+    width: 36rem;
   }
 
   .hero-svg-icon {
@@ -1549,9 +1549,9 @@ footer p {
   }
 }
 
-@media (max-height: 800px) {
+@media (max-height: 850px) {
   #hero-svg {
-    width: 20rem;
+    width: 32rem;
   }
 
   .hero-presentation {
@@ -1559,21 +1559,21 @@ footer p {
   }
 }
 
-@media (max-height: 700px) {
+@media (max-height: 750px) {
   #hero-svg {
-    width: 18rem;
+    width: 28rem;
   }
 }
 
 @media (max-height: 600px) {
   #hero-svg {
-    width: 16rem;
+    width: 24rem;
   }
 }
 
 @media (max-height: 500px) {
   #hero-svg {
-    width: 11rem;
+    width: 16rem;
   }
 
   .contact-me-wrapper {
