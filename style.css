@@ -41,16 +41,19 @@ body {
 }
 
 #contact-message::-webkit-scrollbar {
-  background: #0d3053;
+  background: #afd7ff;
   border-radius: 0 0.5rem 0.5rem 0;
+  width: 1rem;
 }
 
 #contact-message::-webkit-scrollbar-thumb {
-  background: #134374;
+  background: #3369b1;
+  border-radius: 10rem;
 }
 
 #contact-message::-webkit-scrollbar-thumb:hover {
-  background: #154d85;
+  background: #3875c4;
+  cursor: default !important;
 }
 
 main,
@@ -365,8 +368,8 @@ nav {
 }
 
 #hero-svg {
-  width: 40rem;
-  height: auto;
+  width: auto;
+  height: 45%;
   z-index: -1;
 }
 
@@ -378,8 +381,10 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   z-index: 5;
-  margin-top: 8rem;
+  height: 45%;
+  width: 100%;
 }
 
 .hero-presentation h1 {
@@ -402,18 +407,17 @@ nav {
   width: fit-content;
   transition: 0.2s ease;
   transition-property: border-color color;
+  box-shadow: 0px 4px 10px rgb(10 37 64 / 15%);
 }
 
 .hero-projects-cta {
   background: var(--theme-white-accent-color);
   color: var(--white-color);
-  box-shadow: 0px 4px 10px #1a73e836;
 }
 
 .hero-contact-cta {
   color: var(--theme-white-color-1);
   background: var(--white-color);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, .15);
   margin-left: 1.3rem;
 }
 
@@ -1195,10 +1199,6 @@ footer p {
     --about-section-delimitator-height: 10rem;
   }
 
-  #hero-svg {
-    width: 36rem;
-  }
-
   .hero-svg-icon {
     fill: var(--theme-white-color-1);
     width: 5rem;
@@ -1548,33 +1548,6 @@ footer p {
     height: 2rem;
   }
 }
-
-@media (max-height: 850px) {
-  #hero-svg {
-    width: 32rem;
-  }
-
-  .hero-presentation {
-    margin-top: 5rem;
-  }
-}
-
-@media (max-height: 750px) {
-  #hero-svg {
-    width: 28rem;
-  }
-}
-
-@media (max-height: 600px) {
-  #hero-svg {
-    width: 24rem;
-  }
-}
-
-@media (max-height: 500px) {
-  #hero-svg {
-    width: 16rem;
-  }
 
   .contact-me-wrapper {
     padding: 2rem;
