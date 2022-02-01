@@ -1549,6 +1549,7 @@ footer p {
   }
 }
 
+@media (max-height: 600px) {
   .contact-me-wrapper {
     padding: 2rem;
   }
