@@ -284,7 +284,7 @@ nav {
 }
 
 .logo {
-  width: 3.5rem;
+  width: 3rem;
   height: auto;
 }
 
@@ -523,11 +523,6 @@ nav {
   background: var(--white-color);
 }
 
-.marker-icon {
-  width: 1.7rem;
-  margin-left: 0.5rem;
-}
-
 .featured-project-code-link {
   margin-left: 2.2rem;
   color: var(--white-color);
@@ -535,6 +530,10 @@ nav {
 
 .featured-project-code-link:hover {
   color: var(--theme-dark-accent-color);
+}
+
+.featured-project-link .marker-icon {
+  margin-left: .5rem;
 }
 
 .featured-project-description {
@@ -1065,6 +1064,7 @@ footer p {
 
 .menu-button-icon {
   width: 3rem;
+  height: auto;
   fill: var(--theme-white-color-1);
 }
 
@@ -1205,10 +1205,6 @@ footer p {
 }
 
 @media (max-width: 950px) {
-  .logo {
-    width: 3rem;
-  }
-  
   .nav-links {
     visibility: hidden;
     position: fixed;
@@ -1337,6 +1333,11 @@ footer p {
   .close-menu-button {
     width: 2.5rem;
     height: 2.5rem;
+  }
+
+  .menu-button-icon,
+  .logo {
+    width: 2.5rem;
   }
 
   .hero-presentation p,
