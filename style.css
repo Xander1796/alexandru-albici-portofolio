@@ -273,9 +273,9 @@ nav {
   color: var(--white-color);
 }
 
-.theme-dark-nav-fixed .nav-link:hover a,
-.ham-menu-open .nav-link:hover a {
-  color: var(--theme-dark-accent-color);
+.theme-dark-nav-fixed .nav-link a::after,
+.ham-menu-open .nav-link a::after {
+  color: var(--white-color);
 }
 
 .remove-nav-fixed {
@@ -329,16 +329,27 @@ nav {
   display: flex;
   align-items: center;
   position: relative;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
-.nav-link:hover a {
-  color: var(--theme-white-accent-color);
+.nav-link a::after {
+  content: attr(data-hover);
+  color: var(--theme-white-color-1);
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  transition: .2s ease all;
+}
+
+.nav-link a:hover::after {
+  max-width: 100%;
 }
 
 .nav-link:not(:last-of-type) {
-  margin-right: 5rem;
+  margin-right: 3rem;
 }
 
 .nav-link a {
