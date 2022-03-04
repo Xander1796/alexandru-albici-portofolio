@@ -9,19 +9,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="js/app.js" defer></script>
   </head>
   <body>
-    <div class="lamp-svg-wrapper">
-      <img src="svg/lamp.svg" alt="">
-    </div>
+    <a class="go-up-button">
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 1024 1024"
+        height="1em"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M868 545.5L536.1 163a31.96 31.96 0 0 0-48.3 0L156 545.5a7.97 7.97 0 0 0 6 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z"
+        ></path>
+      </svg>
+    </a>
 
     <nav id="nav">
-      <a href="/" class="app-logo hero-section-anim-element">
+      <a href="/" id="home" class="app-logo hero-section-anim-element">
         <svg
           class="logo"
           viewBox="0 0 9 9"
@@ -41,92 +53,105 @@
         </svg>
       </a>
 
-      <button class="menu-button ham-button">
-        <svg
-          class="menu-button-icon ham-button"
-          xmlns="https://www.w3.org/2000/svg"
-          viewBox="0 0 48 48"
-        >
-          <path class="ham-button" fill="none" d="M0 0h48v48h-48z"></path>
-          <path
-            class="ham-button"
-            d="M6 36h36v-4h-36v4zm0-10h36v-4h-36v4zm0-14v4h36v-4h-36z"
-          ></path>
-        </svg>
+      <button class="menu-button">
+        <span class="menu-button-icon"></span>
       </button>
 
-      <div class="nav-links">
-        <ul>
-          <button class="close-menu-button close-ham-button">
+      <ul class="nav-links">
+        <li
+          class="nav-link nav-projects-link nav-link-target hero-section-anim-element"
+        >
+          <a href="#home" class="nav-link-target" data-hover="Home">
+            Home
             <svg
-              class="close-menu-button-icon close-ham-button"
-              enable-background="new 0 0 24 24"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
               viewBox="0 0 24 24"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
               <path
-                class="close-ham-button"
-                d="M13.4,12l6.3-6.3c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0c-0.4,0.4-0.4,1,0,1.4 l6.3,6.3l-6.3,6.3C4.1,18.5,4,18.7,4,19c0,0.6,0.4,1,1,1c0.3,0,0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.4,0.3,0.7,0.3 s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L13.4,12z"
-                fill="#FFF"
-              />
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              ></path>
             </svg>
-          </button>
+          </a>
+        </li>
 
-          <li
-            class="nav-link nav-about-link nav-link-target hero-section-anim-element">
-            <a href="#hero" class="nav-link-target" data-hover="Home"> Home </a>
-          </li>
+        <li
+          class="nav-link nav-projects-link nav-link-target hero-section-anim-element"
+        >
+          <a href="/#projects" class="nav-link-target" data-hover="Projects">
+            Projects
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
+              <path
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              ></path>
+            </svg>
+          </a>
+        </li>
 
-          <li
-            class="nav-link nav-projects-link nav-link-target hero-section-anim-element"
-          >
-            <a href="/#projects" class="nav-link-target" data-hover="Projects"> Projects </a>
-          </li>
-
-          <li
-            class="nav-link nav-about-link nav-link-target hero-section-anim-element"
-          >
-            <a href="/#about" class="nav-link-target" data-hover="About"> About </a>
-          </li>
-          <li
-            class="nav-link nav-contact-link nav-link-target hero-section-anim-element"
-          >
-            <a href="/#contact" class="nav-link-target" data-hover="Contact"> Contact </a>
-          </li>
-        </ul>
-      </div>
+        <li
+          class="nav-link nav-about-link nav-link-target hero-section-anim-element"
+        >
+          <a href="/#about" class="nav-link-target" data-hover="About">
+            About
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
+              <path
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              ></path>
+            </svg>
+          </a>
+        </li>
+        <li
+          class="nav-link nav-contact-link nav-link-target hero-section-anim-element"
+        >
+          <a href="/#contact" class="nav-link-target" data-hover="Contact">
+            Contact
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path fill="none" d="M0 0h24v24H0V0z"></path>
+              <path
+                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+              ></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </nav>
 
     <main>
       <section id="hero" class="hero-section">
-        <div class="hero-section-delimitator-wrapper">
-          <a class="scroll-down-arrow" href="#projects">
-            <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 256 256">
-              <rect fill="none" />
-              <polyline
-                fill="none"
-                stroke="#000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="24"
-                points="208 96 128 176 48 96"
-              />
-            </svg>
-          </a>
-
-          <svg
-            preserveAspectRatio="none"
-            class="hero-section-delimitator"
-            viewBox="0 0 476 68"
-            fill="none"
-            xmlns="https://www.w3.org/2000/svg"
-          >
-            <path d="M0 38L238 0L476 38V68H0V38Z" fill="#0A2540" />
-          </svg>
-        </div>
-
         <div class="hero-presentation">
-          <h1 class="hero-section-anim-element">Hi, I'm Alex.</h1>
-          <p class="hero-section-anim-element">A frontend web developer.</p>
+          <h1 class="hero-section-anim-element">Hi, I'm Alex</h1>
+          <p class="hero-section-anim-element">A frontend web developer</p>
           <div class="cta-wrapper hero-section-anim-element">
             <a href="#projects" class="hero-cta hero-projects-cta">
               See Projects
@@ -178,47 +203,181 @@
           id="hero-svg"
           alt="Programmer sitting on a chair and coding"
         />
+
+        <div class="hero-section-socials">
+          <a
+            class="hero-section-anim-element"
+            href="https://linkedin.com/in/alexandru-albici-3b67741b9"
+          >
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 448 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            class="hero-section-anim-element"
+            href="https://github.com/Xander1796"
+          >
+            <svg
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+          </a>
+          <span class="hero-section-anim-element"></span>
+        </div>
       </section>
 
       <section id="projects" class="projects-section">
         <h2 class="section-title section-projects-title">Projects</h2>
 
-        <div class="featured-project-name-wrapper">
-          <a
-            href="https://bookshelf-project.netlify.app"
-            target="_blank"
-            rel="norefferer"
-            class="featured-project-name"
-          >
-            bookshelf
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-svg"
-              viewBox="0 0 16 14"
-              fill="none"
-            >
-              <path
-                fill="currentColor"
-                d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-              ></path>
-              <path
-                class="moving-path"
-                stroke="currentColor"
-                d="M1.75 8H11"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </a>
-        </div>
+        <article
+          class="featured-project featured-project-left games-stack-project"
+        >
+          <img
+            src="mockups/games-stack-mockup.png"
+            alt="GamesStack project mockup"
+            class="featured-project-img featured-project-gamesstack-img"
+          />
+          <div class="featured-project-details">
+            <div class="featured-project-name-wrapper" data-name="games-stack">
+              <h3 class="featured-project-name">GamesStack</h3>
+              <button title="project info">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 22"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
+            </div>
 
-        <article class="featured-project bookshelf-project">
+            <p class="featured-project-description">
+              A website where you can find information about over 600.000 games.
+              Search for particular games, see details about them.
+            </p>
+
+            <div class="featured-project-links">
+              <a
+                href="https://games-stack.netlify.app"
+                target="_blank"
+                class="featured-project-live-link featured-project-link"
+              >
+                see project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-svg"
+                  viewBox="0 0 16 14"
+                  fill="none"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
+                  ></path>
+                  <path
+                    class="moving-path"
+                    stroke="currentColor"
+                    d="M1.75 8H11"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </a>
+
+              <a
+                href="https://github.com/Xander1796/GAMESSTACK.git"
+                target="_blank"
+                class="featured-project-code-link featured-project-link"
+              >
+                see code
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="arrow-svg"
+                  viewBox="0 0 16 14"
+                  fill="none"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
+                  ></path>
+                  <path
+                    class="moving-path"
+                    stroke="currentColor"
+                    d="M1.75 8H11"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="featured-project featured-project-right bookshelf-project"
+        >
           <img
             src="mockups/bookshelf-mockup.png"
             alt="Bookshelf project mockup"
             class="featured-project-img featured-project-bookshelf-img"
           />
           <div class="featured-project-details">
+            <div class="featured-project-name-wrapper" data-name="bookshelf">
+              <h3 class="featured-project-name">Bookshelf</h3>
+              <button title="project info">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 22"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
+            </div>
+
+            <p class="featured-project-description">
+              This is a book web app. You can search for books, add them to a
+              specific bookshelf, manage the bookshelf by removing books or
+              moving them to other bookshelf and see the best selled books by
+              genre.
+            </p>
+
             <div class="featured-project-links">
               <a
                 href="https://bookshelf-project.netlify.app"
@@ -272,58 +431,45 @@
                 </svg>
               </a>
             </div>
-            <p class="featured-project-description">
-              This is a book web app. You can search for books, add them to a
-              specific bookshelf, manage the bookshelf by removing books or
-              moving them to other bookshelf and see the best selled books by
-              genre.
-            </p>
-            <div class="featured-project-technologies">
-              <span class="featured-project-tech">REACT JS</span>
-              <span class="featured-project-tech">REACT ROUTER</span>
-              <span class="featured-project-tech">CSS</span>
-              <span class="featured-project-tech">HTML</span>
-              <span class="featured-project-tech">GOOGLE BOOKS API</span>
-              <span class="featured-project-tech">NYTIMES BOOKS API</span>
-            </div>
           </div>
         </article>
 
-        <div class="featured-project-name-wrapper">
-          <a
-            href="MOVIEFLIX/index.html"
-            target="_blank"
-            class="featured-project-name"
-          >
-            movieflix
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-svg"
-              viewBox="0 0 16 14"
-              fill="none"
-            >
-              <path
-                fill="currentColor"
-                d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-              ></path>
-              <path
-                class="moving-path"
-                stroke="currentColor"
-                d="M1.75 8H11"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </a>
-        </div>
-
-        <article class="featured-project movieflix-project">
+        <article
+          class="featured-project featured-project-left movieflix-project"
+        >
           <img
             src="mockups/movieflix-mockup.png"
             alt="Movieflix project mockup"
             class="featured-project-img featured-project-movieflix-img"
           />
           <div class="featured-project-details">
+            <div class="featured-project-name-wrapper" data-name="movieflix">
+              <h3 class="featured-project-name">Movieflix</h3>
+              <button title="project info">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 22"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
+            </div>
+
+            <p class="featured-project-description">
+              This is a movie app where you can search for movies, add your
+              favorite movies to your list, see information about them and play
+              trailers.
+            </p>
+
             <div class="featured-project-links">
               <a
                 href="MOVIEFLIX/index.html"
@@ -377,55 +523,45 @@
                 </svg>
               </a>
             </div>
-            <p class="featured-project-description">
-              This is a movie app where you can search for movies, add your
-              favorite movies to your list, see information about them and play
-              trailers.
-            </p>
-            <div class="featured-project-technologies">
-              <span class="featured-project-tech">JAVASCRIPT</span>
-              <span class="featured-project-tech">CSS</span>
-              <span class="featured-project-tech">HTML</span>
-              <span class="featured-project-tech">TMDB API</span>
-            </div>
           </div>
         </article>
 
-        <div class="featured-project-name-wrapper">
-          <a
-            href="PIZZAIOLO/index.html"
-            target="_blank"
-            class="featured-project-name"
-          >
-            pizzaiolo
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-svg"
-              viewBox="0 0 16 14"
-              fill="none"
-            >
-              <path
-                fill="currentColor"
-                d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-              ></path>
-              <path
-                class="moving-path"
-                stroke="currentColor"
-                d="M1.75 8H11"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </a>
-        </div>
-
-        <article class="featured-project pizzaiolo-project">
+        <article
+          class="featured-project featured-project-right pizzaiolo-project"
+        >
           <img
             src="mockups/pizzaiolo-mockup.png"
             alt="Pizzaiolo project mockup"
             class="featured-project-img featured-project-pizzaiolo-img"
           />
           <div class="featured-project-details">
+            <div class="featured-project-name-wrapper" data-name="pizzaiolo">
+              <h3 class="featured-project-name">Pizzaiolo</h3>
+              <button title="project info">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 22"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
+            </div>
+
+            <p class="featured-project-description">
+              A landing page for a pizzeria. You can add items to your cart,
+              update it by removing items and changing the quantity of a certain
+              item.
+            </p>
+
             <div class="featured-project-links">
               <a
                 href="PIZZAIOLO/index.html"
@@ -479,55 +615,43 @@
                 </svg>
               </a>
             </div>
-
-            <p class="featured-project-description">
-              A landing page for a pizzeria. You can add items to your cart,
-              update it by removing items and changing the quantity of a certain
-              item.
-            </p>
-            <div class="featured-project-technologies">
-              <span class="featured-project-tech">JAVASCRIPT</span>
-              <span class="featured-project-tech">CSS</span>
-              <span class="featured-project-tech">HTML</span>
-            </div>
           </div>
         </article>
 
-        <div class="featured-project-name-wrapper">
-          <a
-            href="NOTES/index.html"
-            target="_blank"
-            class="featured-project-name"
-          >
-            notes
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-svg"
-              viewBox="0 0 16 14"
-              fill="none"
-            >
-              <path
-                fill="currentColor"
-                d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-              ></path>
-              <path
-                class="moving-path"
-                stroke="currentColor"
-                d="M1.75 8H11"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </a>
-        </div>
-
-        <article class="featured-project notes-project">
+        <article class="featured-project featured-project-left notes-project">
           <img
             src="mockups/notes-mockup.png"
             alt="Notes project mockup"
             class="featured-project-img featured-project-notes-img"
           />
           <div class="featured-project-details">
+            <div class="featured-project-name-wrapper" data-name="notes">
+              <h3 class="featured-project-name">Notes</h3>
+              <button title="project info">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 22"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+              </button>
+            </div>
+
+            <p class="featured-project-description">
+              A CRUD notes app where I used localStorage to store all the notes.
+              It has features like: searching for notes as well as saving the
+              date and time when a note was created (or edited).
+            </p>
+
             <div class="featured-project-links">
               <a
                 href="NOTES/index.html"
@@ -581,456 +705,183 @@
                 </svg>
               </a>
             </div>
-
-            <p class="featured-project-description">
-              A CRUD notes app where I used localStorage to store all the notes.
-              It has features like: searching for notes as well as saving the
-              date and time when a note was created (or edited).
-            </p>
-            <div class="featured-project-technologies">
-              <span class="featured-project-tech">JAVASCRIPT</span>
-              <span class="featured-project-tech">SCSS</span>
-              <span class="featured-project-tech">HTML</span>
-            </div>
-          </div>
-        </article>
-
-        <div class="featured-project-name-wrapper">
-          <a href="https://alexandru-albici.com" class="featured-project-name">
-            alexandru-albici.com
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="arrow-svg"
-              viewBox="0 0 16 14"
-              fill="none"
-            >
-              <path
-                fill="currentColor"
-                d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-              ></path>
-              <path
-                class="moving-path"
-                stroke="currentColor"
-                d="M1.75 8H11"
-                stroke-width="1.5"
-                stroke-linecap="round"
-              ></path>
-            </svg>
-          </a>
-        </div>
-
-        <article class="featured-project portofolio-project">
-          <img
-            src="mockups/portofolio-mockup.png"
-            alt="Portofolio project mockup"
-            class="featured-project-img featured-project-portofolio-img"
-          />
-
-          <div class="featured-project-details">
-            <div class="featured-project-links">
-              <a
-                href="https://alexandru-albici.com"
-                class="featured-project-live-link featured-project-link"
-              >
-                YOU ARE HERE
-                <svg
-                  class="marker-icon"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="0"
-                  viewBox="0 0 24 24"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/Xander1796/alexandru-albici-portofolio"
-                target="_blank"
-                class="featured-project-code-link featured-project-link"
-              >
-                see code
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
-              </a>
-            </div>
-
-            <p class="featured-project-description">
-              This is my personal portofolio website where I showcase my work
-              and information about me.
-            </p>
-
-            <div class="featured-project-technologies">
-              <span class="featured-project-tech">JAVASCRIPT</span>
-              <span class="featured-project-tech">CSS</span>
-              <span class="featured-project-tech">HTML</span>
-            </div>
           </div>
         </article>
       </section>
 
       <section id="about" class="about-section">
-        <svg
-          class="about-section-upside-delimitator about-section-delimitator"
-          preserveAspectRatio="none"
-          viewBox="0 0 476 78"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 0H476V8L0 78V0Z" fill="#0A2540" />
-        </svg>
-
-        <h2 class="section-title section-about-title">About me</h2>
-
         <div class="about-section-content">
           <div class="about-section-skills-wrapper">
             <h2>Skills</h2>
             <div class="skills-tech-wrapper">
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    enable-background="new 0 0 128 128"
-                    viewBox="0 0 128 128"
-                    class="skill-tech-icon"
-                  >
-                    <g fill="#61DAFB">
-                      <circle cx="64" cy="64" r="11.4" />
-                      <path
-                        d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3-12.5 4.8-19.3 11.4-19.3 18.8s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zm-14.8-30.5c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zm-11.2 59.3c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zm-25.6 27.1c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zm25.6-27.1c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zm-54.5-16.2c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zm-24.7 29c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5-13.8-4-22.1-10-22.1-15.6zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zm60.8-20.3c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z"
-                      />
-                    </g>
-                  </svg>
-                </div>
-                <span class="skill-tech-name">REACT</span>
-              </div>
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    class="skill-tech-icon"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M40 0H0V40H40V0ZM13.5784 31.5744L10.5176 33.4269C11.4033 35.3061 13.1489 36.8635 16.156 36.8635C19.4856 36.8635 21.7678 35.0913 21.7678 31.198V18.3639H18.0088V31.1449C18.0088 33.0242 17.23 33.5074 15.9949 33.5074C14.7063 33.5074 14.1692 32.6214 13.5784 31.5744ZM26.8701 31.2521L23.8096 33.0241C24.9102 35.1992 27.1655 36.8639 30.656 36.8639C34.2273 36.8639 36.8853 35.0114 36.8853 31.628C36.8853 28.4867 35.0864 27.0906 31.8911 25.7211L30.9514 25.3185C29.3406 24.6203 28.6423 24.1636 28.6423 23.036C28.6423 22.1231 29.3406 21.425 30.4414 21.425C31.5154 21.425 32.2134 21.8814 32.8579 23.036L35.7847 21.1563C34.5498 18.9814 32.8313 18.1489 30.4417 18.1489C27.0852 18.1489 24.9373 20.2971 24.9373 23.1164C24.9373 26.1774 26.7361 27.6274 29.448 28.7816L30.3877 29.1847C32.1062 29.9363 33.1265 30.3928 33.1265 31.6816C33.1265 32.7556 32.1333 33.5344 30.5757 33.5344C28.7231 33.5344 27.6758 32.5678 26.8701 31.2521Z"
-                      fill="#F7DF1E"
-                    />
-                  </svg>
-                </div>
-                <span class="skill-tech-name">JAVASCRIPT</span>
-              </div>
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    class="skill-tech-icon"
-                    viewBox="0 0 35 39"
-                    fill="none"
-                    xmlns="https://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 0L3.12656 35.0291L17.1566 38.9044L31.2253 35.0334L34.355 0H0ZM27.8519 8.29344L27.6559 10.5347L27.5697 11.5625H11.1119L11.5047 15.9375H27.1784L27.0734 17.0222L26.0631 28.3094L25.9887 29.0187L17.1775 31.4403L17.1669 31.4466L8.36156 29.1269L7.76375 22.5H12.0809L12.3869 25.9122L17.1641 27.1875H17.1775V27.0169L21.9759 25.8059L22.4772 20.3125H7.57156L6.51437 8.40094L6.41156 7.1875H27.955L27.8519 8.29344Z"
-                      fill="#E44D26"
-                    />
-                  </svg>
-                </div>
-                <span class="skill-tech-name">HTML</span>
-              </div>
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    class="skill-tech-icon"
-                    viewBox="0 0 35 40"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M3.1875 36L0 0H35L31.8076 36.0025L17.5 40L3.1875 36ZM27.3625 15.935L27.7651 11.4125L28.1599 7H6L6.2876 11.1725L23.3875 11.125L23.0576 15.61L6.7251 15.8025L7.16504 19.9925L22.6851 19.95L22.0125 26.0775L17.0776 27.4075L17.075 27.41L12.1475 26.08L11.8176 22.4025H7.37744L8.01001 29.4925L17.0725 32.0025L17.0801 32L26.1475 29.4925L27.3625 15.935Z"
-                      fill="#2196F3"
-                    />
-                  </svg>
-                </div>
-                <span class="skill-tech-name">CSS</span>
-              </div>
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    class="skill-tech-icon"
-                    viewBox="0 0 32 24"
-                    fill="none"
-                    xmlns="https://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M27.534 13.796C27.573 13.795 27.619 13.794 27.666 13.794C28.5 13.794 29.289 13.988 29.989 14.334L29.958 14.32C30.596 14.631 31.12 15.091 31.499 15.655L31.508 15.669C31.807 16.105 31.985 16.644 31.985 17.224C31.985 17.266 31.984 17.308 31.982 17.349V17.343C31.951 17.922 31.688 18.433 31.284 18.791L31.282 18.793C31.061 19.01 30.794 19.18 30.497 19.288L30.482 19.293C30.3153 19.3263 30.2237 19.3013 30.207 19.218C30.1903 19.1347 30.2653 19.043 30.432 18.943C30.884 18.669 31.211 18.227 31.33 17.706L31.333 17.693C31.336 17.651 31.338 17.602 31.338 17.552C31.338 17.241 31.264 16.947 31.133 16.687L31.138 16.698C30.921 16.245 30.597 15.873 30.198 15.604L30.188 15.598C29.591 15.214 28.875 14.962 28.105 14.899L28.089 14.898C27.827 14.859 27.525 14.837 27.217 14.837C26.416 14.837 25.651 14.988 24.947 15.263L24.989 15.248C25.134 15.587 25.225 15.98 25.238 16.392V16.397C25.222 17.242 24.768 17.977 24.093 18.387L24.082 18.393C23.772 18.613 23.418 18.806 23.041 18.956L23.006 18.968C22.777 19.08 22.508 19.145 22.224 19.145C22.191 19.145 22.159 19.144 22.127 19.142H22.132C21.4993 19.0093 21.3493 18.4593 21.682 17.492C21.827 17.071 22.03 16.706 22.287 16.385L22.281 16.392C22.61 15.962 22.971 15.585 23.37 15.251L23.381 15.242L23.283 15.096C23.1 14.784 22.932 14.421 22.797 14.042L22.783 13.996C22.683 13.6627 22.5997 13.3463 22.533 13.047L22.483 12.697L21.983 13.646C21.5497 14.446 21.133 15.1457 20.733 15.745L20.583 15.995C20.751 16.403 20.875 16.876 20.931 17.37L20.933 17.395C20.937 17.442 20.939 17.498 20.939 17.554C20.939 18.312 20.565 18.982 19.991 19.391L19.984 19.396C19.71 19.565 19.383 19.74 19.044 19.896L18.984 19.921C18.631 20.074 18.222 20.174 17.793 20.196H17.784C17.751 20.198 17.712 20.2 17.673 20.2C17.423 20.2 17.186 20.143 16.974 20.042L16.984 20.046C16.857 19.937 16.777 19.777 16.777 19.598C16.777 19.507 16.798 19.42 16.835 19.343L16.833 19.347C17.233 18.786 17.627 18.298 18.046 17.832L18.033 17.847L19.133 16.448L18.934 15.998C18.774 15.704 18.621 15.357 18.498 14.997L18.484 14.949C18.384 14.6157 18.3007 14.2993 18.234 14L18.184 13.65L17.684 14.85C17.2847 15.7827 16.918 16.5823 16.584 17.249C16.086 18.249 15.6693 19.0157 15.334 19.549L15.234 19.699C14.8347 20.3317 14.4513 20.648 14.084 20.648C13.7167 20.648 13.4677 20.4147 13.337 19.948C13.241 19.604 13.185 19.209 13.185 18.801C13.185 18.765 13.185 18.729 13.186 18.693V18.698L13.286 17.998V18.048C13.0193 18.6807 12.7527 19.2637 12.486 19.797C12.309 20.143 12.127 20.438 11.923 20.716L11.936 20.697C11.73 20.913 11.44 21.047 11.119 21.047C11.116 21.047 11.114 21.047 11.111 21.047C11.09 21.049 11.066 21.049 11.042 21.049C10.789 21.049 10.559 20.953 10.385 20.796L10.386 20.797C10.037 20.439 9.778 19.992 9.644 19.493L9.639 19.472C9.475 19.017 9.381 18.491 9.381 17.943C9.381 17.872 9.383 17.802 9.386 17.733V17.743C9.465 16.947 9.624 16.218 9.857 15.523L9.836 15.594L8.037 16.644V16.694C8.298 17.236 8.451 17.872 8.451 18.544C8.451 18.667 8.446 18.789 8.436 18.909L8.437 18.893C8.384 19.923 8.055 20.866 7.524 21.663L7.537 21.643C6.98 22.527 6.177 23.21 5.223 23.605L5.19 23.617C4.653 23.858 4.025 23.999 3.365 23.999C2.947 23.999 2.541 23.943 2.157 23.837L2.189 23.844C1.871 23.737 1.611 23.525 1.446 23.251L1.443 23.245C1.21 22.907 1.063 22.494 1.04 22.049V22.043C1.029 21.942 1.023 21.825 1.023 21.706C1.023 21.193 1.14 20.707 1.349 20.274L1.34 20.294C1.914 19.315 2.708 18.522 3.656 17.964L3.686 17.948C4.357 17.483 5.128 17.032 5.933 16.639L6.039 16.592L6.289 16.442C5.989 16.2087 5.439 15.8087 4.639 15.242C3.57 14.526 2.641 13.803 1.765 13.021L1.79 13.043C0.943 12.314 0.326 11.34 0.049 10.231L0.041 10.193C0.015 10.039 0 9.862 0 9.682C0 9.118 0.145 8.588 0.399 8.127L0.391 8.144C0.951 6.94 1.727 5.925 2.679 5.109L2.691 5.099C3.721 4.126 4.887 3.279 6.153 2.593L6.24 2.55C7.371 1.897 8.692 1.29 10.069 0.803L10.239 0.751C11.518 0.283 12.995 0.009 14.535 0.004H14.537C14.607 0.002 14.69 0 14.773 0C16.014 0 17.188 0.287 18.232 0.798L18.186 0.777C19.086 1.187 19.76 1.959 20.03 2.903L20.036 2.927C20.119 3.249 20.166 3.619 20.166 4C20.166 4.632 20.035 5.234 19.8 5.78L19.811 5.751C19.383 6.788 18.774 7.671 18.014 8.398L18.011 8.401C17.241 9.164 16.318 9.774 15.293 10.181L15.238 10.2C14.164 10.661 12.917 10.951 11.608 10.999L11.589 11C11.397 11.022 11.175 11.034 10.95 11.034C10.358 11.034 9.787 10.949 9.247 10.79L9.29 10.801C8.807 10.647 8.39 10.408 8.036 10.098L8.04 10.101C7.792 9.899 7.59 9.65 7.446 9.367L7.44 9.354C7.34 9.08733 7.33167 8.929 7.415 8.879C7.49833 8.829 7.55667 8.82067 7.59 8.854L7.84 9.104C8.119 9.363 8.452 9.567 8.82 9.697L8.84 9.703C9.346 9.879 9.93 9.981 10.537 9.981C10.732 9.981 10.924 9.971 11.113 9.95L11.09 9.952C12.708 9.761 14.167 9.209 15.426 8.379L15.389 8.402C16.453 7.769 17.314 6.899 17.92 5.862L17.938 5.828C18.239 5.386 18.419 4.84 18.419 4.252C18.419 3.891 18.351 3.545 18.227 3.227L18.234 3.246C17.86 2.655 17.255 2.239 16.549 2.124L16.535 2.122C15.987 1.987 15.357 1.909 14.71 1.909C14.189 1.909 13.679 1.959 13.186 2.055L13.236 2.047C11.549 2.351 10.041 2.872 8.65 3.588L8.741 3.545C4.64233 5.61167 2.526 7.728 2.392 9.894V9.943C2.392 10.816 2.735 11.609 3.294 12.195L3.293 12.194C3.93 12.902 4.634 13.527 5.403 14.067L5.442 14.093C6.143 14.617 6.763 15.158 7.34 15.742L7.341 15.744L7.441 15.844L10.641 14.095C11.006 13.567 11.445 13.121 11.949 12.761L11.965 12.75C12.365 12.414 12.873 12.195 13.43 12.151L13.439 12.15C13.459 12.148 13.482 12.148 13.506 12.148C13.879 12.148 14.199 12.373 14.337 12.695L14.339 12.701C14.444 12.936 14.505 13.211 14.505 13.5C14.505 13.588 14.499 13.675 14.488 13.761L14.489 13.751L14.392 14.244L14.542 14.144C14.646 14.065 14.777 14.018 14.919 14.018C15.009 14.018 15.094 14.037 15.171 14.071L15.167 14.069C15.359 14.119 15.498 14.291 15.498 14.495C15.498 14.53 15.494 14.564 15.486 14.597L15.487 14.594L15.337 15.144C15.037 16.3433 14.8373 17.2097 14.738 17.743C14.688 17.916 14.66 18.115 14.66 18.321C14.66 18.364 14.661 18.406 14.664 18.448V18.442C14.6807 18.642 14.7057 18.742 14.739 18.742C14.7723 18.742 14.8387 18.642 14.938 18.442L15.088 18.092C15.1213 18.092 15.1213 18.1087 15.088 18.142L15.638 16.992C16.938 14.1267 17.6377 12.5267 17.737 12.192L18.037 11.243C18.0703 11.1763 18.2037 11.11 18.437 11.044C18.674 10.98 18.945 10.943 19.225 10.943C19.248 10.943 19.271 10.943 19.293 10.944H19.29C19.7567 10.944 19.99 11.0607 19.99 11.294L19.94 11.544C19.828 11.852 19.717 12.237 19.631 12.631L19.62 12.694C19.6 12.823 19.588 12.971 19.588 13.123C19.588 13.325 19.608 13.522 19.647 13.713L19.644 13.694L19.694 13.893C19.796 14.31 19.951 14.676 20.154 15.01L20.144 14.993C20.5433 14.327 20.9267 13.644 21.294 12.944C21.584 12.461 21.854 11.901 22.071 11.315L22.094 11.245C22.169 10.868 22.255 10.55 22.36 10.24L22.344 10.296C22.3773 10.196 22.5197 10.121 22.771 10.071C23.009 10.023 23.282 9.996 23.561 9.996H23.597H23.595C24.0617 9.996 24.3107 10.1127 24.342 10.346L24.242 10.545C24.123 10.881 24.019 11.285 23.949 11.7L23.943 11.745C23.934 11.842 23.928 11.954 23.928 12.068C23.928 12.307 23.952 12.541 23.997 12.767L23.993 12.744V12.943C24.108 13.379 24.279 13.762 24.503 14.109L24.493 14.093L24.643 14.443C25.478 14.033 26.46 13.793 27.498 13.793H27.537H27.535L27.534 13.796ZM6.095 21.049C6.79 20.331 7.219 19.351 7.219 18.271C7.219 17.854 7.155 17.452 7.037 17.074L7.045 17.102L6.245 17.602C5.429 18.067 4.723 18.586 4.084 19.176L4.092 19.169C3.607 19.615 3.249 20.192 3.073 20.843L3.067 20.868C2.917 21.4847 2.992 21.8847 3.292 22.068C3.475 22.152 3.69 22.201 3.915 22.201C4.161 22.201 4.394 22.143 4.599 22.039L4.59 22.043C5.184 21.827 5.687 21.484 6.087 21.045L6.09 21.042L6.095 21.049ZM12.792 16.445C12.9587 16.0117 13.142 15.495 13.342 14.895C13.6087 14.095 13.7003 13.6287 13.617 13.496C13.5337 13.3633 13.3753 13.3467 13.142 13.446C12.864 13.581 12.631 13.766 12.445 13.993L12.442 13.997C12.234 14.26 12.036 14.554 11.86 14.863L11.842 14.897C11.64 15.228 11.469 15.609 11.35 16.013L11.341 16.047C11.148 16.57 11.036 17.175 11.036 17.805C11.036 17.89 11.038 17.974 11.042 18.058V18.046C11.0753 18.712 11.182 19.0703 11.362 19.121C11.542 19.1717 11.7503 18.93 11.987 18.396C12.216 17.983 12.42 17.503 12.572 17L12.586 16.946C12.6853 16.71 12.7533 16.543 12.79 16.445H12.792ZM18.338 19.095C19.031 18.784 19.519 18.129 19.587 17.354L19.588 17.346V17.296L19.038 17.996L18.039 19.096C18.024 19.108 18.014 19.126 18.014 19.146C18.014 19.166 18.024 19.184 18.038 19.196C18.07 19.2287 18.17 19.1953 18.338 19.096V19.095ZM22.637 18.145C23.393 17.929 23.937 17.244 23.937 16.433C23.937 16.42 23.937 16.407 23.937 16.394V16.396C23.927 16.196 23.891 16.008 23.832 15.83L23.836 15.845C23.447 16.191 23.128 16.605 22.897 17.072L22.886 17.095C22.5853 17.6943 22.5013 18.0437 22.634 18.143L22.637 18.145Z"
-                      fill="#C76494"
-                    />
-                  </svg>
-                </div>
-                <span class="skill-tech-name">SCSS</span>
-              </div>
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    class="skill-tech-icon"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="https://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_870_153)">
-                      <path
-                        d="M13.3333 40.0001C17.0133 40.0001 20 37.0134 20 33.3334V26.6667H13.3333C9.65329 26.6667 6.66663 29.6534 6.66663 33.3334C6.66663 37.0134 9.65329 40.0001 13.3333 40.0001Z"
-                        fill="#0ACF83"
-                      />
-                      <path
-                        d="M6.66663 19.9999C6.66663 16.3199 9.65329 13.3333 13.3333 13.3333H20V26.6666H13.3333C9.65329 26.6666 6.66663 23.6799 6.66663 19.9999Z"
-                        fill="#A259FF"
-                      />
-                      <path
-                        d="M6.66663 6.66667C6.66663 2.98667 9.65329 0 13.3333 0H20V13.3333H13.3333C9.65329 13.3333 6.66663 10.3467 6.66663 6.66667Z"
-                        fill="#F24E1E"
-                      />
-                      <path
-                        d="M20 0H26.6667C30.3467 0 33.3333 2.98667 33.3333 6.66667C33.3333 10.3467 30.3467 13.3333 26.6667 13.3333H20V0Z"
-                        fill="#FF7262"
-                      />
-                      <path
-                        d="M33.3333 19.9999C33.3333 23.6799 30.3467 26.6666 26.6667 26.6666C22.9867 26.6666 20 23.6799 20 19.9999C20 16.3199 22.9867 13.3333 26.6667 13.3333C30.3467 13.3333 33.3333 16.3199 33.3333 19.9999Z"
-                        fill="#1ABCFE"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_870_153">
-                        <rect width="40" height="40" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </div>
-                <span class="skill-tech-name">FIGMA</span>
-              </div>
-              <div class="skill-tech">
-                <div class="skill-tech-icon-container">
-                  <svg
-                    class="skill-tech-icon"
-                    viewBox="0 0 40 40"
-                    fill="none"
-                    xmlns="https://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M39.2457 18.2181L21.7813 0.75435C20.7761 -0.25145 19.1449 -0.25145 18.1385 0.75435L14.5119 4.38098L19.1124 8.98153C20.1814 8.62028 21.4074 8.86262 22.2596 9.71483C23.1158 10.5725 23.3565 11.8089 22.9865 12.8814L27.4201 17.3153C28.4927 16.9457 29.7304 17.1848 30.5871 18.043C31.7844 19.2398 31.7844 21.1797 30.5871 22.3774C29.3894 23.5752 27.4496 23.5752 26.2513 22.3774C25.3507 21.4758 25.1282 20.1531 25.5841 19.0436L21.4494 14.9088L21.4489 25.7898C21.7487 25.938 22.0224 26.1338 22.2596 26.3695C23.4569 27.5664 23.4569 29.5064 22.2596 30.7051C21.0619 31.9023 19.1211 31.9023 17.9252 30.7051C16.7278 29.5064 16.7278 27.5666 17.9252 26.3697C18.2121 26.0826 18.5531 25.8552 18.9285 25.7007V14.7184C18.5526 14.5649 18.2114 14.3374 17.9252 14.0494C17.018 13.1435 16.7999 11.8124 17.2647 10.6984L12.7297 6.16289L0.754689 18.1373C-0.251563 19.1441 -0.251563 20.7755 0.754689 21.7815L18.2194 39.2455C19.2249 40.2515 20.8558 40.2515 21.8625 39.2455L39.2455 21.8626C40.2515 20.8563 40.2515 19.2239 39.2455 18.2181"
-                      fill="#DE4C36"
-                    />
-                  </svg>
-                </div>
-                <div class="skill-tech-name">GIT</div>
-              </div>
+              <span class="tech">REACT</span>
+              <span class="tech">JAVASCRIPT</span>
+              <span class="tech">HTML</span>
+              <span class="tech">CSS</span>
+              <span class="tech">SCSS</span>
+              <span class="tech">FIGMA</span>
+              <span class="tech">GIT</span>
+              <span class="tech">GITHUB</span>
+              <span class="tech">NPM</span>
+              <span class="tech">VSCODE</span>
             </div>
           </div>
+
           <div class="about-section-about-wrapper">
             <h2>About me</h2>
             <p>
-              <span>
-                My name is Alexandru Albici. I am a self-taught frontend web
-                developer who loves everything about web development and
-                programming in general.
-              </span>
-              <span>
-                Everyday I strive to be better than I was the day before, learn
-                new things and enjoy every step of the never ending journey that
-                programming is.
-              </span>
-              <span> I like programming, hiking, dogs and good movies. </span>
+              My name is Alexandru Albici. I am a self-taught frontend web
+              developer who loves everything about web development and
+              programming in general. Everyday I strive to be better than I was
+              the day before, learn new things and enjoy every step of the never
+              ending journey that programming is. I like programming, hiking,
+              dogs and good movies.
             </p>
           </div>
         </div>
       </section>
 
       <section id="contact" class="contact-section">
-        <h2 class="section-title section-contact-title">Contact</h2>
+        <h2 class="section-title section-contact-title">Get in touch</h2>
 
-        <div class="contact-me-wrapper">
-          <div class="additional-contact-info-container">
-            <h2>GET IN TOUCH</h2>
-            <div class="additional-contact-info-wrapper">
-              <h3>EMAIL</h3>
-              <div>
-                <button
-                  class="copy-button"
-                  data-copy="alexflorian171@yahoo.com"
-                >
-                  copy
-                </button>
-                <span>alexflorian171@yahoo.com</span>
+        <div class="contact-form-wrapper">
+          <form
+            autocomplete="off"
+            action="/"
+            method="POST"
+            class="contact-form"
+            data-netlify="true"
+          >
+            <div class="input-wrapper">
+              <label for="contact-name">Name:</label>
+              <input
+                name="name"
+                id="contact-name"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="contact-email">Email:</label>
+              <input
+                name="email"
+                id="contact-email"
+                type="email"
+                placeholder="Your email"
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="subject">Subject:</label>
+              <div class="select-wrapper">
+                <select id="" subject name="subject">
+                  <option value="">Work</option>
+                  <option value="">Talk about a project</option>
+                  <option value="">Just wanted to say hi</option>
+                  <option value="">Ask me a question</option>
+                  <option value="">Something else</option>
+                </select>
               </div>
             </div>
-
-            <div class="additional-contact-info-wrapper">
-              <h3>FIND ME HERE</h3>
-              <div>
-                <a
-                  href="https://github.com/Xander1796"
-                  class="additional-contact-info-social-link"
-                  title="Github"
-                  target="_blank"
-                >
-                  Github
-                </a>
-
-                <a
-                  href="https://linkedin.com/in/alexandru-albici-3b67741b9"
-                  class="additional-contact-info-social-link"
-                  target="_blank"
-                  title="Linkedin"
-                >
-                  Linkedin
-                </a>
-              </div>
+            <div class="input-wrapper">
+              <label for="contact-message">Message:</label>
+              <textarea
+                name="message"
+                id="contact-message"
+                placeholder="Your message"
+                required
+              ></textarea>
             </div>
-          </div>
-
-          <div class="contact-form-delimitator"></div>
-
-          <div class="contact-form-wrapper">
-            <h3>
+            <button type="submit" id="contact-form-button">
+              Send message
               <svg
-                stroke="currentColor"
-                fill="currentColor"
-                stroke-width="0"
-                viewBox="0 0 512 456"
-                height="1em"
-                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
+                class="arrow-svg"
+                viewBox="0 0 16 14"
+                fill="none"
               >
                 <path
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                  d="M320 96H88a40 40 0 00-40 40v240a40 40 0 0040 40h334.73a40 40 0 0040-40V239"
+                  fill="currentColor"
+                  d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
                 ></path>
                 <path
-                  fill="none"
+                  class="moving-path"
+                  stroke="currentColor"
+                  d="M1.75 8H11"
+                  stroke-width="1.5"
                   stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="32"
-                  d="M112 160l144 112 87-65.67"
-                ></path>
-                <circle class="dot" cx="431.95" cy="128.05" r="47.95"></circle>
-                <path
-                  class="dot"
-                  d="M432 192a63.95 63.95 0 1163.95-63.95A64 64 0 01432 192zm0-95.9a32 32 0 1031.95 32 32 32 0 00-31.95-32z"
                 ></path>
               </svg>
-              Leave me a message
-            </h3>
-            <p>I will get back to you as soon as possible. Thank you!</p>
-            <form
-              autocomplete="off"
-              action="/"
-              method="POST"
-              class="contact-form"
-              data-netlify="true"
-            >
-              <div class="input-wrapper">
-                <input
-                  name="name"
-                  id="contact-name"
-                  type="text"
-                  placeholder="Name"
-                />
-                <label for="contact-name">Name</label>
-              </div>
-              <div class="input-wrapper">
-                <input
-                  name="email"
-                  id="contact-email"
-                  type="email"
-                  placeholder="Email*"
-                  required
-                />
-                <label for="contact-email">Email*</label>
-              </div>
-              <div class="input-wrapper">
-                <textarea
-                  name="message"
-                  id="contact-message"
-                  placeholder="Message*"
-                  required
-                ></textarea>
-                <label for="contact-message">Message*</label>
-              </div>
-              <button type="submit" id="contact-form-button">
-                Send message
+            </button>
+
+            <div class="socials">
+              <h4>Find me here</h4>
+              <span></span>
+              <a href="https://linkedin.com/in/alexandru-albici-3b67741b9">
                 <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 448 512"
+                  height="1em"
+                  width="1em"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
                 >
                   <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
+                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
                   ></path>
                 </svg>
-              </button>
-            </form>
-          </div>
+              </a>
+              <a href="https://github.com/Xander1796">
+                <svg
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </form>
         </div>
       </section>
     </main>
 
     <footer>
       <p>&copy; 2021 Alexandru Albici</p>
-      <a href="#hero" class="footer-go-up-button" title="to top">
-        <svg
-          class="button-icon"
-          xmlns="https://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M6.293,10.879a1,1,0,0,0,1.414,0L11,7.587,11.007,18a1,1,0,0,0,2,0L13,7.586l3.293,3.293a1,1,0,1,0,1.414-1.414L14.122,5.879a3,3,0,0,0-4.243,0L6.293,9.465A1,1,0,0,0,6.293,10.879Z"
-          />
-        </svg>
-      </a>
     </footer>
+
+    <div class="featured-project-info-overlay">
+      <div class="featured-project-info-modal">
+        <button class="close-modal">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z"
+            ></path>
+          </svg>
+        </button>
+        <div class="featured-project-info-technologies">
+          <h3>Technologies used</h3>
+          <div></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

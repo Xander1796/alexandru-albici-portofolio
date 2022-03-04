@@ -1,26 +1,35 @@
 "use strict";
 
-const body = document.querySelector("body");
-const copyButton = document.querySelectorAll(".copy-button");
+import { projectsTech } from "./projectsTech.js";
 
-const nav = document.querySelector("nav");
+const body = document.querySelector("body");
+
 const navLinks = document.querySelector(".nav-links");
 
 const heroSectionAnimElement = document.querySelectorAll(
   ".hero-section-anim-element"
 );
 const menuButton = document.querySelector(".menu-button");
-const closeMenuButton = document.querySelector(".close-menu-button");
-const projectsLinks = document.querySelectorAll(".hover-external-link");
-const heroSection = document.querySelector(".hero-section");
-const featuredProject = document.querySelectorAll(".featured-project");
-const featuredProjectName = document.querySelectorAll(".featured-project-name");
+const goUpButton = document.querySelector(".go-up-button");
+
+const allProjectsInfoBtn = document.querySelectorAll(
+  ".featured-project-name-wrapper button"
+);
+const projectInfoTechWrapper = document.querySelector(
+  ".featured-project-info-technologies div"
+);
+const featuredProjectInfoOverlay = document.querySelector(
+  ".featured-project-info-overlay"
+);
 
 // SETTING A VARIABLE FOR THE VH UNIT
 
 let vh;
 
 window.addEventListener("DOMContentLoaded", function () {
+  if (window.scrollY < 400) {
+    goUpButton.classList.add("hidden");
+  }
   vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 
@@ -37,110 +46,49 @@ window.addEventListener("resize", function () {
 });
 
 heroSectionAnimElement.forEach((anim, i) => {
-  anim.style.animation = `hero-section-anim .4s cubic-bezier(.61,.09,.54,.97) ${
+  anim.style.animation = `hero-section-anim .3s cubic-bezier(.61,.09,.54,.97) ${
     0.2 * i
   }s forwards`;
   anim.style.animationIterationCount = "1";
 });
 
-// CREATE MESSAGE COPIED ELEMENT
-
-let messageCopiedTimeoutFunction;
-
-copyButton.forEach((button) =>
-  button.addEventListener("click", async function () {
-    await navigator.clipboard.writeText(button.dataset.copy);
-
-    clearTimeout(messageCopiedTimeoutFunction);
-    button.textContent = "Copied!";
-
-    messageCopiedTimeoutFunction = setTimeout(function () {
-      button.textContent = "copy";
-    }, 3000);
-  })
-);
-
-// INTERSECTION OBSERVERS
-
-let heroSectionObserverCallback = function (entries) {
-  let [entry] = entries;
-  if (entry.intersectionRatio > 0) {
-    heroSection.classList.remove("hero-section-margin");
-    nav.classList.remove("nav-fixed");
-    nav.classList.remove("theme-dark-nav-fixed");
-  } else {
-    heroSection.classList.add("hero-section-margin");
-
-    nav.classList.add("nav-fixed");
-    if (
-      entry.isIntersecting === false &&
-      !nav.classList.contains("theme-white-nav-fixed")
-    ) {
-      nav.classList.remove("theme-white-nav-fixed");
-      nav.classList.add("theme-dark-nav-fixed");
-    }
-  }
-};
-
-const observeHeroSection = new IntersectionObserver(
-  heroSectionObserverCallback,
-  {
-    root: null,
-    threshold: 0,
-  }
-);
-
-observeHeroSection.observe(heroSection);
-
-const observeProjectSection = new IntersectionObserver(
-  (entries) => {
-    let [entry] = entries;
-
-    if (entry.intersectionRatio === 0 && entry.isIntersecting === false) {
-      nav.classList.add("theme-white-nav-fixed");
-      nav.classList.remove("theme-dark-nav-fixed");
-    } else if (
-      entry.isIntersecting === true &&
-      nav.classList.contains("nav-fixed")
-    ) {
-      nav.classList.add("theme-dark-nav-fixed");
-      nav.classList.remove("theme-white-nav-fixed");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "80px",
-  }
-);
-
-observeProjectSection.observe(document.querySelector(".projects-section"));
-
-nav.addEventListener("click", function (e) {
-  if (e.target.classList.contains("ham-button")) {
-    navLinks.classList.toggle("ham-menu-overlay");
-
-    setTimeout(() => {
-      navLinks.querySelector("ul").classList.toggle("ham-menu-open");
-    }, 0);
-
-    body.classList.toggle("stop-scrolling");
-  }
-
+window.addEventListener("keydown", (e) => {
   if (
-    e.target.classList.contains("close-ham-button") ||
-    e.target.classList.contains("nav-link-target") ||
-    e.target.classList.contains("nav-links")
+    e.key === "Escape" &&
+    featuredProjectInfoOverlay.classList.contains("visible")
   ) {
-    navLinks.classList.remove("ham-menu-open");
+    featuredProjectInfoOverlay.classList.remove("visible");
+  }
 
-    setTimeout(() => {
-      navLinks.classList.toggle("ham-menu-overlay");
-    }, 200);
+  if (e.key === "Escape" && navLinks.classList.contains("nav-menu-open")) {
+    navLinks.classList.remove("nav-menu-open");
+    menuButton.classList.remove("open");
+  }
+});
 
-    navLinks.querySelector("ul").classList.remove("ham-menu-open");
-    body.classList.remove("stop-scrolling");
-    body.style.width = "auto";
+//GO UP BUTTON
+
+goUpButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 400) {
+    goUpButton.classList.remove("hidden");
+  } else {
+    goUpButton.classList.add("hidden");
+  }
+});
+
+//NAV MENU
+
+nav.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("menu-button") ||
+    e.target.closest(".nav-link")
+  ) {
+    navLinks.classList.toggle("nav-menu-open");
+    menuButton.classList.toggle("open");
   }
 });
 
@@ -168,7 +116,7 @@ const handleSubmit = (e) => {
 
       const messageSent = document.createElement("div");
       messageSent.classList.add("message-sent");
-      messageSent.classList.add('success');
+      messageSent.classList.add("success");
       messageSent.textContent = "Message Sent!";
       body.appendChild(messageSent);
 
@@ -184,3 +132,37 @@ const handleSubmit = (e) => {
 };
 
 form.addEventListener("submit", handleSubmit);
+
+//PROJECT INFORMATION MODAL
+
+allProjectsInfoBtn.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    projectInfoTechWrapper.innerHTML = "";
+
+    const targetedProjectName = e.target.closest(
+      ".featured-project-name-wrapper"
+    ).dataset.name;
+
+    const projectIndex = projectsTech.findIndex(
+      (item) => item.projectName === targetedProjectName
+    );
+
+    projectsTech[projectIndex].technologiesUsed.forEach((item) => {
+      const tech = document.createElement("span");
+      tech.classList.add("tech");
+      tech.textContent = item;
+      projectInfoTechWrapper.appendChild(tech);
+    });
+
+    featuredProjectInfoOverlay.classList.add("visible");
+  })
+);
+
+featuredProjectInfoOverlay.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("close-modal") ||
+    e.target.classList.contains("featured-project-info-overlay")
+  ) {
+    featuredProjectInfoOverlay.classList.remove("visible");
+  }
+});
