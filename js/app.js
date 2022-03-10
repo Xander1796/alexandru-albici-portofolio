@@ -1,6 +1,6 @@
 "use strict";
 
-import { projectsTech } from "./projectsTech.js";
+import { projectsInfo } from "./projectsInfo.js";
 
 const body = document.querySelector("body");
 
@@ -22,28 +22,22 @@ const featuredProjectInfoOverlay = document.querySelector(
   ".featured-project-info-overlay"
 );
 
-// SETTING A VARIABLE FOR THE VH UNIT
-
-let vh;
+const goUpFunction = () => {
+  if (window.scrollY > 400 && window.innerWidth > 950) {
+    goUpButton.classList.remove("hidden");
+  } else {
+    goUpButton.classList.add("hidden");
+  }
+};
 
 window.addEventListener("DOMContentLoaded", function () {
   if (window.scrollY < 400) {
     goUpButton.classList.add("hidden");
   }
-  vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-  let scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-  document.documentElement.style.setProperty(
-    "--scrollbar-width",
-    `${scrollBarWidth}px`
-  );
 });
 
-window.addEventListener("resize", function () {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
+window.addEventListener("scroll", goUpFunction);
+window.addEventListener("resize", goUpFunction);
 
 heroSectionAnimElement.forEach((anim, i) => {
   anim.style.animation = `hero-section-anim .3s cubic-bezier(.61,.09,.54,.97) ${
@@ -53,13 +47,6 @@ heroSectionAnimElement.forEach((anim, i) => {
 });
 
 window.addEventListener("keydown", (e) => {
-  if (
-    e.key === "Escape" &&
-    featuredProjectInfoOverlay.classList.contains("visible")
-  ) {
-    featuredProjectInfoOverlay.classList.remove("visible");
-  }
-
   if (e.key === "Escape" && navLinks.classList.contains("nav-menu-open")) {
     navLinks.classList.remove("nav-menu-open");
     menuButton.classList.remove("open");
@@ -70,14 +57,6 @@ window.addEventListener("keydown", (e) => {
 
 goUpButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    goUpButton.classList.remove("hidden");
-  } else {
-    goUpButton.classList.add("hidden");
-  }
 });
 
 //NAV MENU
@@ -133,36 +112,25 @@ const handleSubmit = (e) => {
 
 form.addEventListener("submit", handleSubmit);
 
-//PROJECT INFORMATION MODAL
-
-allProjectsInfoBtn.forEach((btn) =>
-  btn.addEventListener("click", (e) => {
-    projectInfoTechWrapper.innerHTML = "";
-
-    const targetedProjectName = e.target.closest(
-      ".featured-project-name-wrapper"
-    ).dataset.name;
-
-    const projectIndex = projectsTech.findIndex(
-      (item) => item.projectName === targetedProjectName
-    );
-
-    projectsTech[projectIndex].technologiesUsed.forEach((item) => {
-      const tech = document.createElement("span");
-      tech.classList.add("tech");
-      tech.textContent = item;
-      projectInfoTechWrapper.appendChild(tech);
-    });
-
-    featuredProjectInfoOverlay.classList.add("visible");
-  })
+const imgControls = document.querySelectorAll(
+  ".featured-project-img-controls button"
 );
 
-featuredProjectInfoOverlay.addEventListener("click", (e) => {
-  if (
-    e.target.classList.contains("close-modal") ||
-    e.target.classList.contains("featured-project-info-overlay")
-  ) {
-    featuredProjectInfoOverlay.classList.remove("visible");
-  }
+imgControls.forEach((btn, i) => {
+  btn.addEventListener("click", () => {
+    const targetedImgWrapper = btn.closest(".featured-project-img-wrapper");
+    const targetedImgWrapperName = targetedImgWrapper.dataset.name;
+    const targetedBtnIndex = btn.dataset.index;
+
+    const projectIndex = projectsInfo.findIndex(
+      (item) => item.projectName === targetedImgWrapperName
+    );
+
+    targetedImgWrapper.querySelector(".featured-project-img").src =
+      projectsInfo[projectIndex].imgRoutes[targetedBtnIndex];
+    targetedImgWrapper
+      .querySelectorAll(".featured-project-img-controls button")
+      .forEach((btn) => btn.classList.remove("active"));
+    btn.classList.add("active");
+  });
 });

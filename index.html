@@ -9,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source Sans Pro:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM Sans:wght@400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="js/app.js" defer></script>
   </head>
   <body>
-    <a class="go-up-button">
+    <a class="go-up-button hidden">
       <svg
         stroke="currentColor"
         fill="currentColor"
@@ -150,64 +150,29 @@
     <main>
       <section id="hero" class="hero-section">
         <div class="hero-presentation">
-          <h1 class="hero-section-anim-element">Hi, I'm Alex</h1>
-          <p class="hero-section-anim-element">A frontend web developer</p>
+          <h1 class="hero-section-anim-element">
+            Hi, I'm Alex<br />A frontend web developer
+          </h1>
+          <p class="hero-section-anim-element">
+            I specialize in building eye catching, intuitive and responsive
+            digital experiences.
+          </p>
           <div class="cta-wrapper hero-section-anim-element">
             <a href="#projects" class="hero-cta hero-projects-cta">
               See Projects
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="arrow-svg"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                ></path>
-                <path
-                  class="moving-path"
-                  stroke="currentColor"
-                  d="M1.75 8H11"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                ></path>
-              </svg>
             </a>
             <a href="#contact" class="hero-cta hero-contact-cta">
               Contact Me
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="arrow-svg"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                ></path>
-                <path
-                  class="moving-path"
-                  stroke="currentColor"
-                  d="M1.75 8H11"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                ></path>
-              </svg>
             </a>
           </div>
         </div>
 
-        <img
-          src="svg/hero-svg.svg"
-          id="hero-svg"
-          alt="Programmer sitting on a chair and coding"
-        />
+        <img src="svg/hero-svg.svg" id="hero-svg" alt="Programmer coding" />
 
         <div class="hero-section-socials">
           <a
-            class="hero-section-anim-element"
             href="https://linkedin.com/in/alexandru-albici-3b67741b9"
+            target="_blank"
           >
             <svg
               stroke="currentColor"
@@ -223,61 +188,133 @@
               ></path>
             </svg>
           </a>
-          <a
-            class="hero-section-anim-element"
-            href="https://github.com/Xander1796"
-          >
+          <a href="https://github.com/Xander1796" target="_blank">
             <svg
               stroke="currentColor"
-              fill="none"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 480 512"
               height="1em"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"
               ></path>
             </svg>
           </a>
-          <span class="hero-section-anim-element"></span>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-section-content">
+          <div class="about-section-skills-wrapper">
+            <h2>Skills</h2>
+            <div class="skills-wrapper">
+              <div class="skills">
+                <div class="skills-img-wrapper">
+                  <div class="skills-img languages-img"></div>
+                  <h3>Languages</h3>
+                </div>
+
+                <div class="tech-wrapper">
+                  <span>React</span>
+                  <span>Javascript</span>
+                  <span>Html</span>
+                  <span>Css / Scss</span>
+                </div>
+              </div>
+              <div class="skills">
+                <div class="skills-img-wrapper">
+                  <div class="skills-img tools-img"></div>
+                  <h3>Tools</h3>
+                </div>
+
+                <div class="tech-wrapper">
+                  <span>Figma</span>
+                  <span>Git</span>
+                  <span>Github</span>
+                  <span>VsCode</span>
+                  <span>Npm</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-section-about-wrapper">
+            <img
+              src="svg/about-section-delimitator.svg"
+              class="about-section-delimitator"
+              alt=""
+            />
+            <h2>About me</h2>
+            <p>
+              My name is Alexandru Albici. I am a self-taught frontend web
+              developer who loves everything about web development and
+              programming in general. Everyday I strive to be better than I was
+              the day before, learn new things and enjoy every step of the never
+              ending journey that programming is. I like programming, hiking,
+              dogs and good movies.
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="projects" class="projects-section">
-        <h2 class="section-title section-projects-title">Projects</h2>
+        <div class="section-title-wrapper">
+          <h2 class="section-title section-projects-title">Projects</h2>
+          <p>Some of my work</p>
+        </div>
 
         <article
           class="featured-project featured-project-left games-stack-project"
         >
-          <img
-            src="mockups/games-stack-mockup.png"
-            alt="GamesStack project mockup"
-            class="featured-project-img featured-project-gamesstack-img"
-          />
+          <div class="featured-project-img-wrapper" data-name="GamesStack">
+            <img
+              src="mockups/games-stack/mockup-1.png"
+              alt="GamesStack project mockup"
+              class="featured-project-img featured-project-gamesstack-img"
+            />
+            <div class="featured-project-img-controls">
+              <button class="active" data-index="0"></button>
+              <button data-index="1"></button>
+              <button data-index="2"></button>
+            </div>
+          </div>
           <div class="featured-project-details">
-            <div class="featured-project-name-wrapper" data-name="games-stack">
+            <div class="featured-project-name-wrapper" data-name="GamesStack">
               <h3 class="featured-project-name">GamesStack</h3>
-              <button title="project info">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="2"
-                  viewBox="0 0 24 22"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-              </button>
+              <div class="project-info-wrapper">
+                <button>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 22"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+
+                <div class="project-info-tech-wrapper">
+                  <h4>Technologies used</h4>
+                  <div class="project-info-tech">
+                    <span>React</span>
+                    <span>React Router</span>
+                    <span>Javascript</span>
+                    <span>Html</span>
+                    <span>Css</span>
+                    <span>Rawg API</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <p class="featured-project-description">
@@ -292,24 +329,6 @@
                 class="featured-project-live-link featured-project-link"
               >
                 see project
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
 
               <a
@@ -318,24 +337,6 @@
                 class="featured-project-code-link featured-project-link"
               >
                 see code
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
             </div>
           </div>
@@ -344,31 +345,54 @@
         <article
           class="featured-project featured-project-right bookshelf-project"
         >
-          <img
-            src="mockups/bookshelf-mockup.png"
-            alt="Bookshelf project mockup"
-            class="featured-project-img featured-project-bookshelf-img"
-          />
+          <div class="featured-project-img-wrapper" data-name="Bookshelf">
+            <img
+              src="mockups/bookshelf/mockup-1.png"
+              alt="Bookshelf project mockup"
+              class="featured-project-img featured-project-bookshelf-img"
+            />
+
+            <div class="featured-project-img-controls">
+              <button class="active" data-index="0"></button>
+              <button data-index="1"></button>
+              <button data-index="2"></button>
+            </div>
+          </div>
           <div class="featured-project-details">
-            <div class="featured-project-name-wrapper" data-name="bookshelf">
+            <div class="featured-project-name-wrapper" data-name="Bookshelf">
               <h3 class="featured-project-name">Bookshelf</h3>
-              <button title="project info">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="2"
-                  viewBox="0 0 24 22"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-              </button>
+              <div class="project-info-wrapper">
+                <button>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 22"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+
+                <div class="project-info-tech-wrapper">
+                  <h4>Technologies used</h4>
+                  <div class="project-info-tech">
+                    <span>React</span>
+                    <span>React Router</span>
+                    <span>Javascript</span>
+                    <span>Html</span>
+                    <span>Css</span>
+                    <span>Google Books API</span>
+                    <span>NYT Books API</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <p class="featured-project-description">
@@ -385,24 +409,6 @@
                 class="featured-project-live-link featured-project-link"
               >
                 see project
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
 
               <a
@@ -411,24 +417,6 @@
                 class="featured-project-code-link featured-project-link"
               >
                 see code
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
             </div>
           </div>
@@ -437,31 +425,51 @@
         <article
           class="featured-project featured-project-left movieflix-project"
         >
-          <img
-            src="mockups/movieflix-mockup.png"
-            alt="Movieflix project mockup"
-            class="featured-project-img featured-project-movieflix-img"
-          />
+          <div class="featured-project-img-wrapper" data-name="Movieflix">
+            <img
+              src="mockups/movieflix/mockup-1.png"
+              alt="Movieflix project mockup"
+              class="featured-project-img featured-project-movieflix-img"
+            />
+
+            <div class="featured-project-img-controls">
+              <button class="active" data-index="0"></button>
+              <button data-index="1"></button>
+              <button data-index="2"></button>
+            </div>
+          </div>
           <div class="featured-project-details">
-            <div class="featured-project-name-wrapper" data-name="movieflix">
+            <div class="featured-project-name-wrapper" data-name="Movieflix">
               <h3 class="featured-project-name">Movieflix</h3>
-              <button title="project info">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="2"
-                  viewBox="0 0 24 22"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-              </button>
+              <div class="project-info-wrapper">
+                <button>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 22"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+
+                <div class="project-info-tech-wrapper">
+                  <h4>Technologies used</h4>
+                  <div class="project-info-tech">
+                    <span>Javascript</span>
+                    <span>Html</span>
+                    <span>Css</span>
+                    <span>TMDB API</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <p class="featured-project-description">
@@ -477,24 +485,6 @@
                 class="featured-project-live-link featured-project-link"
               >
                 see project
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
 
               <a
@@ -503,24 +493,6 @@
                 class="featured-project-code-link featured-project-link"
               >
                 see code
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
             </div>
           </div>
@@ -529,31 +501,50 @@
         <article
           class="featured-project featured-project-right pizzaiolo-project"
         >
-          <img
-            src="mockups/pizzaiolo-mockup.png"
-            alt="Pizzaiolo project mockup"
-            class="featured-project-img featured-project-pizzaiolo-img"
-          />
+          <div class="featured-project-img-wrapper" data-name="Pizzaiolo">
+            <img
+              src="mockups/pizzaiolo/mockup-1.png"
+              alt="Pizzaiolo project mockup"
+              class="featured-project-img featured-project-pizzaiolo-img"
+            />
+
+            <div class="featured-project-img-controls">
+              <button class="active" data-index="0"></button>
+              <button data-index="1"></button>
+              <button data-index="2"></button>
+            </div>
+          </div>
           <div class="featured-project-details">
-            <div class="featured-project-name-wrapper" data-name="pizzaiolo">
+            <div class="featured-project-name-wrapper" data-name="Pizzaiolo">
               <h3 class="featured-project-name">Pizzaiolo</h3>
-              <button title="project info">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="2"
-                  viewBox="0 0 24 22"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-              </button>
+              <div class="project-info-wrapper">
+                <button>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 22"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+
+                <div class="project-info-tech-wrapper">
+                  <h4>Technologies used</h4>
+                  <div class="project-info-tech">
+                    <span>Javascript</span>
+                    <span>Html</span>
+                    <span>Css</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <p class="featured-project-description">
@@ -569,24 +560,6 @@
                 class="featured-project-live-link featured-project-link"
               >
                 see project
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
 
               <a
@@ -595,55 +568,56 @@
                 class="featured-project-code-link featured-project-link"
               >
                 see code
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
             </div>
           </div>
         </article>
 
         <article class="featured-project featured-project-left notes-project">
-          <img
-            src="mockups/notes-mockup.png"
-            alt="Notes project mockup"
-            class="featured-project-img featured-project-notes-img"
-          />
+          <div class="featured-project-img-wrapper" data-name="Notes">
+            <img
+              src="mockups/notes/mockup-1.png"
+              alt="Notes project mockup"
+              class="featured-project-img featured-project-notes-img"
+            />
+
+            <div class="featured-project-img-controls">
+              <button class="active" data-index="0"></button>
+              <button data-index="1"></button>
+              <button data-index="2"></button>
+            </div>
+          </div>
           <div class="featured-project-details">
-            <div class="featured-project-name-wrapper" data-name="notes">
+            <div class="featured-project-name-wrapper" data-name="Notes">
               <h3 class="featured-project-name">Notes</h3>
-              <button title="project info">
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-width="2"
-                  viewBox="0 0 24 22"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  height="1em"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-              </button>
+              <div class="project-info-wrapper">
+                <button>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="2"
+                    viewBox="0 0 24 22"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+
+                <div class="project-info-tech-wrapper">
+                  <h4>Technologies used</h4>
+                  <div class="project-info-tech">
+                    <span>Javascript</span>
+                    <span>Html</span>
+                    <span>Scss</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <p class="featured-project-description">
@@ -659,24 +633,6 @@
                 class="featured-project-live-link featured-project-link"
               >
                 see project
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
 
               <a
@@ -685,64 +641,20 @@
                 class="featured-project-code-link featured-project-link"
               >
                 see code
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="arrow-svg"
-                  viewBox="0 0 16 14"
-                  fill="none"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                  ></path>
-                  <path
-                    class="moving-path"
-                    stroke="currentColor"
-                    d="M1.75 8H11"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                  ></path>
-                </svg>
               </a>
             </div>
           </div>
         </article>
       </section>
 
-      <section id="about" class="about-section">
-        <div class="about-section-content">
-          <div class="about-section-skills-wrapper">
-            <h2>Skills</h2>
-            <div class="skills-tech-wrapper">
-              <span class="tech">REACT</span>
-              <span class="tech">JAVASCRIPT</span>
-              <span class="tech">HTML</span>
-              <span class="tech">CSS</span>
-              <span class="tech">SCSS</span>
-              <span class="tech">FIGMA</span>
-              <span class="tech">GIT</span>
-              <span class="tech">GITHUB</span>
-              <span class="tech">NPM</span>
-              <span class="tech">VSCODE</span>
-            </div>
-          </div>
-
-          <div class="about-section-about-wrapper">
-            <h2>About me</h2>
-            <p>
-              My name is Alexandru Albici. I am a self-taught frontend web
-              developer who loves everything about web development and
-              programming in general. Everyday I strive to be better than I was
-              the day before, learn new things and enjoy every step of the never
-              ending journey that programming is. I like programming, hiking,
-              dogs and good movies.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section id="contact" class="contact-section">
-        <h2 class="section-title section-contact-title">Get in touch</h2>
+        <div class="section-title-wrapper">
+          <h2 class="section-title section-contact-title">Contact Me</h2>
+          <p>
+            Have a project in mind? Get in touch with me and let's make it a
+            reality.
+          </p>
+        </div>
 
         <div class="contact-form-wrapper">
           <form
@@ -752,8 +664,8 @@
             class="contact-form"
             data-netlify="true"
           >
+            <p>All fields marked with an * are mandatory</p>
             <div class="input-wrapper">
-              <label for="contact-name">Name:</label>
               <input
                 name="name"
                 id="contact-name"
@@ -761,9 +673,9 @@
                 placeholder="Your name"
                 required
               />
+              <label for="contact-name">Name*</label>
             </div>
             <div class="input-wrapper">
-              <label for="contact-email">Email:</label>
               <input
                 name="email"
                 id="contact-email"
@@ -771,54 +683,35 @@
                 placeholder="Your email"
                 required
               />
+              <label for="contact-email">Email*</label>
             </div>
             <div class="input-wrapper">
-              <label for="subject">Subject:</label>
-              <div class="select-wrapper">
-                <select id="" subject name="subject">
-                  <option value="">Work</option>
-                  <option value="">Talk about a project</option>
-                  <option value="">Just wanted to say hi</option>
-                  <option value="">Ask me a question</option>
-                  <option value="">Something else</option>
-                </select>
-              </div>
-            </div>
-            <div class="input-wrapper">
-              <label for="contact-message">Message:</label>
               <textarea
                 name="message"
                 id="contact-message"
                 placeholder="Your message"
                 required
               ></textarea>
+              <label for="contact-message">Message*</label>
             </div>
-            <button type="submit" id="contact-form-button">
-              Send message
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="arrow-svg"
-                viewBox="0 0 16 14"
-                fill="none"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                ></path>
-                <path
-                  class="moving-path"
-                  stroke="currentColor"
-                  d="M1.75 8H11"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                ></path>
-              </svg>
-            </button>
+            <button type="submit" id="contact-form-button">Send message</button>
+          </form>
+
+          <div class="social-wrapper">
+            <img src="svg/mail-bg.svg" class="mail-bg" alt="" />
+            <div class="my-email">
+              <img src="svg/mail-sm.svg" alt="" />
+              <div>
+                <h3>EMAIL</h3>
+                <p>alexflorian171@yahoo.com</p>
+              </div>
+            </div>
 
             <div class="socials">
-              <h4>Find me here</h4>
-              <span></span>
-              <a href="https://linkedin.com/in/alexandru-albici-3b67741b9">
+              <a
+                href="https://linkedin.com/in/alexandru-albici-3b67741b9"
+                target="_blank"
+              >
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
@@ -833,25 +726,23 @@
                   ></path>
                 </svg>
               </a>
-              <a href="https://github.com/Xander1796">
+              <a href="https://github.com/Xander1796" target="_blank">
                 <svg
                   stroke="currentColor"
-                  fill="none"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 480 512"
                   height="1em"
                   width="1em"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"
                   ></path>
                 </svg>
               </a>
             </div>
-          </form>
+          </div>
         </div>
       </section>
     </main>
@@ -862,23 +753,26 @@
 
     <div class="featured-project-info-overlay">
       <div class="featured-project-info-modal">
-        <button class="close-modal">
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            stroke-width="0"
-            viewBox="0 0 512 512"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z"
-            ></path>
-          </svg>
-        </button>
+        <div class="name-and-close-modal">
+          <h2 class="project-info-name">GamesStack</h2>
+          <button class="close-modal">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z"
+              ></path>
+            </svg>
+          </button>
+        </div>
         <div class="featured-project-info-technologies">
-          <h3>Technologies used</h3>
+          <h3>Tools used</h3>
           <div></div>
         </div>
       </div>
