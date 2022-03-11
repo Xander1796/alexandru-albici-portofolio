@@ -12,16 +12,6 @@ const heroSectionAnimElement = document.querySelectorAll(
 const menuButton = document.querySelector(".menu-button");
 const goUpButton = document.querySelector(".go-up-button");
 
-const allProjectsInfoBtn = document.querySelectorAll(
-  ".featured-project-name-wrapper button"
-);
-const projectInfoTechWrapper = document.querySelector(
-  ".featured-project-info-technologies div"
-);
-const featuredProjectInfoOverlay = document.querySelector(
-  ".featured-project-info-overlay"
-);
-
 const goUpFunction = () => {
   if (window.scrollY > 400 && window.innerWidth > 950) {
     goUpButton.classList.remove("hidden");
@@ -41,7 +31,7 @@ window.addEventListener("resize", goUpFunction);
 
 heroSectionAnimElement.forEach((anim, i) => {
   anim.style.animation = `hero-section-anim .3s cubic-bezier(.61,.09,.54,.97) ${
-    0.2 * i
+    0.15 * i
   }s forwards`;
   anim.style.animationIterationCount = "1";
 });
@@ -116,6 +106,8 @@ const imgControls = document.querySelectorAll(
   ".featured-project-img-controls button"
 );
 
+//PROJECTS IMAGES
+
 imgControls.forEach((btn, i) => {
   btn.addEventListener("click", () => {
     const targetedImgWrapper = btn.closest(".featured-project-img-wrapper");
@@ -134,3 +126,4 @@ imgControls.forEach((btn, i) => {
     btn.classList.add("active");
   });
 });
+

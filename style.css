@@ -3,7 +3,7 @@
 
   --primary-color-500: #f6f9fc;
   --primary-color-700: #0a2540;
-  --primary-color-600: #556c83;
+  --primary-color-600: #4d6276;
   --accent-color: #1a73e8;
   --secondary-accent-color: #065fd4;
   --accent-color-hover: #1969d3;
@@ -109,7 +109,7 @@ section {
 
 @keyframes hero-section-anim {
   0% {
-    transform: translateY(50%);
+    transform: translateY(100%);
     opacity: 0;
   }
 
@@ -138,7 +138,7 @@ nav {
   position: relative;
   z-index: 1000;
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   list-style-type: none;
 }
 
@@ -166,7 +166,9 @@ nav {
   align-items: center;
   position: relative;
   font-size: 1.5rem;
+  padding: 1rem;
   font-weight: 500;
+  overflow: hidden;
 }
 
 .nav-link a::after {
@@ -267,6 +269,10 @@ nav {
 .hero-presentation,
 #hero-svg {
   min-width: 50%;
+}
+
+.hero-section-anim-wrapper {
+  overflow: hidden;
 }
 
 .hero-presentation h1 {
@@ -538,14 +544,25 @@ nav {
   width: 25rem;
   left: 50%;
   transform: translate(-50%, 10px);
-  top: 115%;
+  top: 135%;
   background: var(--primary-color-400);
   border-radius: 1rem;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
   z-index: 10;
   opacity: 0;
   visibility: hidden;
   transition: 0.2s ease all;
+}
+
+.project-info-tech-wrapper::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  left: 50%;
+  top: -30px;
+  transform: translateX(-50%);
+  border: 15px solid transparent;
+  border-bottom-color: var(--primary-color-400);
 }
 
 .project-info-tech-wrapper h4 {
@@ -553,7 +570,7 @@ nav {
   font-size: 2rem;
   padding: 1rem;
   white-space: nowrap;
-  border-bottom: 1px solid #0a254021;
+  border-bottom: 1px solid #deecff;
 }
 
 .project-info-tech {
@@ -998,7 +1015,7 @@ footer p {
 }
 
 .hero-section-anim-element {
-  transform: translateY(50%);
+  transform: translateY(calc(100% + 1rem));
   opacity: 0;
 }
 
@@ -1259,6 +1276,10 @@ footer p {
     transition: 0.3s cubic-bezier(0.4, 1.14, 1, 0.98) transform;
   }
 
+  .nav-link {
+    padding: 0;
+  }
+
   .nav-link a {
     width: 100%;
     display: flex;
@@ -1480,6 +1501,12 @@ footer p {
   .project-info-tech-wrapper {
     left: -15rem;
     transform: translate(0, 10px);
+  }
+
+  .project-info-tech-wrapper::before {
+    right: 6.6rem;
+    left: auto;
+    transform: translateX(0);
   }
 
   .project-info-wrapper button:hover + .project-info-tech-wrapper,
