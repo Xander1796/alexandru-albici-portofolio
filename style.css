@@ -109,7 +109,7 @@ section {
 
 @keyframes hero-section-anim {
   0% {
-    transform: translateY(100%);
+    transform: translateY(calc(100% + 1rem));
     opacity: 0;
   }
 
