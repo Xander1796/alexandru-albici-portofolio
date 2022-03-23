@@ -113,6 +113,11 @@ button {
   cursor: pointer;
 }
 
+.btn svg {
+  width: 1.15em;
+  height: 1.15em;
+}
+
 .btn-accent {
   background: var(--accent-color);
   color: var(--primary-color-400);
@@ -123,12 +128,12 @@ button {
 }
 
 .btn-off-accent {
-  background: #deedff;
-  color: #1862c3;
+  color: var(--primary-color-700);
+  border: 2px solid #e1e1e1;
 }
 
 .btn-off-accent:hover {
-  background: #d4e8ff;
+  border-color: var(--accent-color);
 }
 
 section {
@@ -325,8 +330,8 @@ nav {
 
 .hero-cta,
 #contact-form-button {
-  padding: 2.2rem 1rem;
-  min-width: 13.5rem;
+  padding: 2rem 1rem;
+  min-width: 14.5rem;
 }
 
 .section-title-wrapper {
@@ -1484,7 +1489,9 @@ footer p {
     font-size: 1.6rem;
   }
 
-  .contact-form p {
+  .contact-form p,
+  .contact-form input:placeholder-shown + label,
+  #contact-message:placeholder-shown + label {
     font-size: 1.5rem;
   }
 
@@ -1529,6 +1536,22 @@ footer p {
   .go-up-button svg {
     width: 1.7rem;
     height: 1.7rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .btn {
+    font-size: 1.3rem;
+  }
+
+  .hero-cta {
+    min-width: 13rem;
+    padding: 1.8rem 1rem;
+  }
+
+  .featured-project-link {
+    padding: 1.5rem 1rem;
+    min-width: 10rem;
   }
 }
 
