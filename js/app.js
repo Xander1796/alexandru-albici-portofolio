@@ -61,6 +61,25 @@ nav.addEventListener("click", (e) => {
   }
 });
 
+//COPY EMAIL TO CLIPBOARD
+
+const copyEmailBtn = document.querySelector(".copy-email-btn");
+
+const copyEmailTimeoutFunction = () => {
+  copyEmailBtn.classList.remove("active");
+}
+
+let copyEmailTimeout;
+
+copyEmailBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(copyEmailBtn.dataset.email);
+
+  copyEmailBtn.classList.add('active');
+  
+  clearTimeout(copyEmailTimeout);
+  copyEmailTimeout = setTimeout(copyEmailTimeoutFunction, 4000);
+});
+
 // HANDLE FORM SUBMIT WITH NETLIFY FORMS
 
 const form = document.querySelector("form");
@@ -95,7 +114,7 @@ const handleSubmit = (e) => {
       messageSentTimeoutFunction = setTimeout(() => {
         if (body.querySelector(".message-sent"))
           body.querySelector(".message-sent").remove();
-      }, 4000);
+      }, 6000);
     })
     .catch((error) => alert(error));
 };
@@ -126,4 +145,3 @@ imgControls.forEach((btn, i) => {
     btn.classList.add("active");
   });
 });
-
