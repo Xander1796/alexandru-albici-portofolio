@@ -67,15 +67,15 @@ const copyEmailBtn = document.querySelector(".copy-email-btn");
 
 const copyEmailTimeoutFunction = () => {
   copyEmailBtn.classList.remove("active");
-}
+};
 
 let copyEmailTimeout;
 
 copyEmailBtn.addEventListener("click", () => {
   navigator.clipboard.writeText(copyEmailBtn.dataset.email);
 
-  copyEmailBtn.classList.add('active');
-  
+  copyEmailBtn.classList.add("active");
+
   clearTimeout(copyEmailTimeout);
   copyEmailTimeout = setTimeout(copyEmailTimeoutFunction, 4000);
 });

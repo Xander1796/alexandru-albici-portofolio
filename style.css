@@ -13,7 +13,7 @@
   --section-vertical-padding: 80px;
   --nav-height: 7rem;
 
-  --border-radius: .7rem;
+  --border-radius: 0.7rem;
 }
 
 * {
@@ -133,11 +133,11 @@ button {
 .btn-off-accent {
   color: #003983;
   border: 1px solid #acd0ff;
-  outline: 1px solid transparent;
 }
 
 .btn-off-accent:hover {
-  outline-color: #acd0ff;
+  box-shadow: inset 0 0 0 1px #acd0ff;
+  background: #e9f3ff;
 }
 
 section {
@@ -375,96 +375,8 @@ nav {
   gap: var(--section-vertical-padding);
 }
 
-.featured-project-info-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 2000;
-}
-
 .visible {
   display: flex;
-}
-
-.featured-project-info-modal {
-  position: relative;
-  background: var(--primary-color-500);
-  border-radius: var(--border-radius);
-  width: 50rem;
-  width: 50rem;
-  transform: scale(0.95);
-  animation: info-modal-anim 0.3s ease forwards;
-}
-
-@keyframes info-modal-anim {
-  100% {
-    transform: scale(1);
-  }
-}
-
-.featured-project-info-modal .name-and-close-modal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background: var(--accent-color);
-  border-radius: 1rem 1rem 0 0;
-}
-
-.featured-project-info-modal .close-modal {
-  display: grid;
-  place-content: center;
-  width: 3rem;
-  height: 3rem;
-  background: var(--primary-color-400);
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 5;
-}
-
-.featured-project-info-modal .close-modal svg {
-  pointer-events: none;
-  width: 2.2rem;
-  height: 2.2rem;
-  fill: var(--primary-color-700);
-}
-
-.featured-project-info-technologies {
-  padding: 2rem;
-}
-
-.project-info-name {
-  font-size: 2.2rem;
-  color: var(--primary-color-400);
-}
-
-.featured-project-info-technologies h3 {
-  font-size: 2.2rem;
-  margin-bottom: 2rem;
-  color: var(--primary-color-700);
-}
-
-.featured-project-info-technologies div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.featured-project-info-technologies span {
-  padding: 1rem;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  color: var(--primary-color-700);
-  font-weight: 600;
-  border-radius: var(--border-radius);
-  background: var(--primary-color-400);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .featured-project {
@@ -473,14 +385,6 @@ nav {
   align-items: center;
   gap: 6rem;
   position: relative;
-}
-
-.featured-project-left {
-  flex-direction: row;
-}
-
-.featured-project-right {
-  flex-direction: row-reverse;
 }
 
 .featured-project-img-wrapper {
@@ -1360,7 +1264,7 @@ footer p {
     width: 100%;
   }
 
-    .hero-section p {
+  .hero-section p {
     width: 45rem;
   }
 
@@ -1407,19 +1311,6 @@ footer p {
 }
 
 @media (max-width: 650px) {
-  .featured-project-info-modal {
-    width: 90%;
-  }
-
-  .featured-project-info-technologies h3,
-  .project-info-name {
-    font-size: 2rem;
-  }
-
-  .featured-project-info-technologies span {
-    font-size: 1.4rem;
-  }
-
   .about-section-about-wrapper,
   .about-section-skills-wrapper {
     align-items: initial;

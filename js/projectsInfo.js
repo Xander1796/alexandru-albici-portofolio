@@ -24,6 +24,14 @@ export const projectsInfo = [
     ],
   },
   {
+    projectName: "Notes",
+    imgRoutes: [
+      "mockups/notes/mockup-1.png",
+      "mockups/notes/mockup-2.png",
+      "mockups/notes/mockup-3.png",
+    ],
+  },
+  {
     projectName: "Pizzaiolo",
     imgRoutes: [
       "mockups/pizzaiolo/mockup-1.png",
@@ -32,11 +40,10 @@ export const projectsInfo = [
     ],
   },
   {
-    projectName: "Notes",
+    projectName: "Shoppy",
     imgRoutes: [
-      "mockups/notes/mockup-1.png",
-      "mockups/notes/mockup-2.png",
-      "mockups/notes/mockup-3.png",
+      "mockups/shoppy/mockup-1.png",
+      "mockups/shoppy/mockup-2.png",
     ],
   },
 ];
